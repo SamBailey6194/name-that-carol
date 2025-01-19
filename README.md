@@ -1,131 +1,126 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Name That Carol
 
-Welcome USER_NAME,
+**Name That Carol** The aim of the website is to provide users with a way to test their knowledge of Christmas Songs in a fun and engaging way that encourages them to invite their friends to see if they can beat their score.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The decision to make this website is due to the user stories found [here](userstory.md).
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+![Responsive Mockup](insert link)
 
-## Gitpod Reminders
+## Features 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Below are the features for the website and at the end is listed any features that weren't able to be implemented but would be with more time.
 
-`python3 -m http.server`
+### Existing Features
 
-A blue button should appear to click: _Make Public_,
+- __Home Page__
 
-Another blue button should appear to click: _Open Browser_.
+  - __Header__
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+    - 
+    
+    ![Homepage Header](insert link)
 
-A blue button should appear to click: _Make Public_,
+### Features Left to Implement
 
-Another blue button should appear to click: _Open Browser_.
+- Create a login database so people can create accounts which would allow them to:
+  - Track their scores and comapre to past attempts
+  - Compare to various leaderboards
+  - Add friends
+  - Access future quizzes we may implement
+- Add a page with leaderboards, and have this as a button on the quiz page, these could be:
+  - Friends
+  - Local
+  - National
+  - Global
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Testing 
 
-To log into the Heroku toolbelt CLI:
+The website has been tested; including internal (buttons and navbar) & external links, responsive design, and forms; on Opera GX, Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Fixed Bugs
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+- 
 
-### Connecting your Mongo database
+### Unfixed Bugs
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- 
 
-------
+#### Attempted Fixes
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**June 18, 2024,** Add Mongo back into template
+### Links and Actions
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+| Location | Link / Button | Expected Action | Pass / Fail |
+| --- | --- | --- | --- |
+| All Pages | Navbar Logo | Go to Homepage | Pass |
 
-**May 28 2024:** Fix Mongo and Links installs
+### Validator Testing 
 
-**April 26 2024:** Update node version to 16
+- Lighthouse Score
+  - Below you can see my lighthouse scores tested on Chrome Incognito Mode
 
-**September 20 2023:** Update Python version to 3.9.17.
+  - Homepage
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+  ![Lighthouse - Homepage](insert link)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- HTML
+  - No errors were returned when passing through the official W3C Validator, see images below for each page.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    - Homepage
+      
+    ![W3C validator - Homepage](insert link)
+    
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- CSS
+  - Put CSS through Autoprefixer to ensure it works on all browsers
+  - No errors were found when passing through the official Jigsaw validator, see links below.
+  
+   ![(Jigsaw) validator 1](insertlink)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Deployment
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+This section desribes how I deployed my website
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the "Settings" tab 
+  - Under "Code and automation" selected "Pages"
+  - Ensure "Deploy from branch" is selected
+  - In the "Branch" section "main" was selected as the branch then "/root" was selected
+  - Click "save" and the GitHub Pages was deployed
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The live link can be found here - INSERT LINK
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Cloning
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+This section describes how other software developers can clone the code to edit it elsewhere
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- To clone the code so you can edit it yourself please follow the below:
+PLEASE NOTE THIS IS FOR WINDOWS COMMAND LINE
+  - In the GitHub repository click the dropdown for '<> code'
+  - Ensure you are on 'local' and have 'https' selected, then copy the URL by clicking the symbol next to the URL box
+  - Once copied in the search bar on your taskbar type in 'cmd' and open 'Command Prompt' or 'Comman Line'
+  - In command line type 'git clone' and paste the url next to it
+  - In file explorer locate 'This PC' down the side, then 'local disk' (usually the :C drive), then 'users', then your user, then find the folder called 'photo-guides'
+  - You now have access to all the code and files locally
+  - If you want to edit the code, please ensure you creat a new branch in the software you are using enabling us to potentially see the edits you have done before uploading them to the original GitHub repository
+  - To create a new branch that depends on the software you are using, please google how to do this for your software
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+If you aren't on windows please google how to get a GitHub repository stored locally on your OS
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ 
+## Credits 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Below are my credits for where I got inspiration for some of the code, where the content came from and where media is from.
 
-------
+### Code
 
-## FAQ about the uptime script
+- 
 
-**Why have you added this script?**
+### Content 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- 
 
-**How will this affect me?**
+### Media
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- 
