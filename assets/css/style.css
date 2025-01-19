@@ -31,11 +31,24 @@ header {
 }
 
 /* Header Global Styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--primary-font);
     color: var(--secondary-color);
     text-align: center;
     font-size: 20px;
+    padding: 7px 0;
+}
+
+/* Putting Quiz Area in a box */
+.quiz-area {
+    box-sizing: border-box;
+    
+    text-align: center;
 }
 
 /* Media Queries */
