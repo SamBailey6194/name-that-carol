@@ -64,9 +64,47 @@ h6 {
     color: var(--secondary-color);
 }
 
-/* Put Score Area on same line */
+/* Centralising score-area */
+.score-area {
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 85%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 3%;
+    text-align: center;
+}
+
+/* Put Scores on same line and spacing them out */
 .scores {
     display: inline-block;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#correct {
+    color: #678C78;
+}
+
+#wrong {
+    color: #db4009;
 }
 
 /* Media Queries */
+
+/* Media Query for Tablet (768px) */
+@media screen and (min-width: 768px) {
+
+    /* Header font-size */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 35px;
+    }
+}
