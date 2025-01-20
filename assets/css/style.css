@@ -85,12 +85,25 @@ h6 {
     padding-right: 10%;
 }
 
+/* Give the score number a colour */
 #correct {
     color: #678C78;
 }
 
 #wrong {
     color: #db4009;
+}
+
+/* Style Submit Button */
+.button {
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--quartary-color);
+}
+
+.button : hover {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
 }
 
 /* Media Queries */
