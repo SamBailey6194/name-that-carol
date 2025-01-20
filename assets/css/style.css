@@ -74,7 +74,7 @@ h6 {
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
-    padding: 3%;
+    padding: 1%;
     text-align: center;
 }
 
@@ -133,6 +133,11 @@ h6 {
         padding-right: 18%;
     }
 
+    /* Submit button being as big as the other text */
+    .submit--btn {
+        font-size: 20px;
+    }
+
 }
 
 /* Media Query for Laptop (1024px) */
@@ -143,10 +148,11 @@ h6 {
         font-size: 25px;
     }
 
-    /* Make score box less tall on larger screens */
-    .score-area {
-        padding: 1%;
+    /* Submit button being as big as the other text */
+    .submit--btn {
+        font-size: 25px;
     }
+    
 }
 
 /* Media Query for Large Screens (1440px) */
