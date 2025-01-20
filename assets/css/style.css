@@ -21,7 +21,6 @@
 /* Body Global Styles */
 body {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
     font-family: var(--secondary-font);
     margin: 0;
 }
@@ -58,8 +57,8 @@ h6 {
     border-radius: 15px;
 }
 
-/* Colouring username area */
-#createuser {
+/* Colouring username and quiz area */
+#createuser, .quiz-area {
     background-color: var(--quartary-color);
     color: var(--secondary-color);
     text-align: center;
@@ -70,20 +69,9 @@ h6 {
     margin-bottom: 3%;
 }
 
-/* Coloring guide area */
-#guide {
+/* Coloring guide and leaderboard area */
+#guide, #leaderbaord {
     background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-}
-
-/* Coloring and centering text in quiz area */
-.quiz-area {
-    background-color: var(--quartary-color);
-    text-align: center;
-}
-
-/* Change color of paragraphs in quiz-area to help with accessibility */
-.quiz-area p {
     color: var(--secondary-color);
 }
 
@@ -130,11 +118,6 @@ button {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
     border-color: var(--secondary-color);
-}
-
-/* Give styling to label for answer box  */
-.guess {
-    color: var(--secondary-color);
 }
 
 /* Media Queries */
