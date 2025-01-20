@@ -26,7 +26,7 @@
         <h1><i class="fa-solid fa-music"></i> Name That Carol <i class="fa-solid fa-music"></i></h1>
     </header>
 
-    <div class="box guide">
+    <div class="box" id="guide">
         <p>This is a fun quiz to test your knowledge of Christmas songs. Some of them are carols and others are songs
             that appeared in the charts.</p>
         <p>The songs story or theme will be described in a paragraph of text. Your job is to workout which song is being
@@ -36,23 +36,29 @@
         <p>Good Luck!</p>
     </div>
 
-    <div class="box quiz-area">
+    <div id="quiz">
 
-        <div class="question-area">
-            <p class="question">Question</p>
+        <div class="box quiz-area">
+
+            <div id="question">
+                <p>Question</p>
+            </div>
+
+            <div class="answer-area">
+                <div class="guess--btn" id="options">
+                    <p>Option</p>
+                </div>
+            </div>
+
+            <button class="submit--btn" data-type="submit">Submit Answer</button>
+
         </div>
 
-        <div class="answer-area">
-            <label for="answer" class="guess">Enter Answer:</label> <input type="text" id="answer">
+        <div class="box score-area">
+            <p class="scores">Correct: <span id="correct">0</span></p>
+            <p class="scores">Wrong: <span id="wrong">0</span></p>
         </div>
 
-        <button class="submit--btn" data-type="submit">Submit Answer</button>
-
-    </div>
-
-    <div class="box score-area">
-        <p class="scores">Correct: <span id="correct">0</span></p>
-        <p class="scores">Wrong: <span id="wrong">0</span></p>
     </div>
 
     <!-- Link to JavaScript File -->

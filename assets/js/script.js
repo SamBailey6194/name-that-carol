@@ -1,3 +1,7 @@
+function showQuiz() {
+
+}
+
 const quizData = {
 
 }
@@ -6,7 +10,7 @@ function showQuestion() {
 
 }
 
-function checkAnswer() {
+function selectAnswer() {
 
 }
 

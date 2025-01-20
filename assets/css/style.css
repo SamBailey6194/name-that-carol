@@ -59,7 +59,7 @@ h6 {
 }
 
 /* Coloring guide area */
-.guide {
+#guide {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
 }
@@ -106,13 +106,15 @@ button {
 }
 
 /* Style Submit Button */
-.submit--btn {
+.submit--btn,
+.guess--btn {
     border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--quartary-color);
 }
 
-.submit--btn:hover {
+.submit--btn:hover,
+.guess--btn:hover {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
     border-color: var(--secondary-color);
@@ -121,10 +123,6 @@ button {
 /* Give styling to label for answer box  */
 .guess {
     color: var(--secondary-color);
-}
-
-#answer {
-    margin-bottom: 2%;
 }
 
 /* Media Queries */
@@ -158,13 +156,6 @@ button {
         font-size: 20px;
     }
 
-    /* Making answer box bigger on tablets */
-    #answer {
-        height: 25px;
-        width: 275px;
-        font-size: 20px;
-    }
-
 }
 
 /* Media Query for Laptop (1024px) */
@@ -177,13 +168,6 @@ button {
 
     /* Button being as big as the other text */
     button {
-        font-size: 25px;
-    }
-
-    /* Making answer box bigger on larger screens */
-    #answer {
-        height: 30px;
-        width: 325px;
         font-size: 25px;
     }
 
