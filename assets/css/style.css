@@ -112,6 +112,11 @@ h6 {
 /* Media Query for Tablet (768px) */
 @media screen and (min-width: 768px) {
 
+    /* Make body text bigger and more readable */
+    body {
+        font-size: 20px;
+    }
+    
     /* Header font-size */
     h1,
     h2,
@@ -120,5 +125,14 @@ h6 {
     h5,
     h6 {
         font-size: 35px;
+    }
+}
+
+/* Media Query for Laptop (1024px) */
+@media screen and (min-width: 1024px) {
+
+    /* Make body text bigger and more readable */
+    body {
+        font-size: 25px;
     }
 }
