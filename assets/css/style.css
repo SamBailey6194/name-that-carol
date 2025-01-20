@@ -116,7 +116,7 @@ h6 {
     body {
         font-size: 20px;
     }
-    
+
     /* Header font-size */
     h1,
     h2,
@@ -126,6 +126,13 @@ h6 {
     h6 {
         font-size: 35px;
     }
+
+    /* Space out scores better on tablets */
+    .scores {
+        padding-left: 18%;
+        padding-right: 18%;
+    }
+
 }
 
 /* Media Query for Laptop (1024px) */
@@ -135,4 +142,20 @@ h6 {
     body {
         font-size: 25px;
     }
+
+    /* Make score box less tall on larger screens */
+    .score-area {
+        padding: 1%;
+    }
+}
+
+/* Media Query for Large Screens (1440px) */
+@media screen and (min-width: 1440px) {
+
+    /* Space out scores better on tablets */
+    .scores {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
 }
