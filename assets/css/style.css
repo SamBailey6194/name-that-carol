@@ -95,15 +95,16 @@ h6 {
 }
 
 /* Style Submit Button */
-.button {
-    border: none;
+.submit--btn {
+    border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--quartary-color);
 }
 
-.button : hover {
+.submit--btn:hover {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 /* Media Queries */
@@ -119,5 +120,10 @@ h6 {
     h5,
     h6 {
         font-size: 35px;
+    }
+
+    /* Make gap between score-area and quiz-area smaller */
+    .score-area {
+        margin-top: 0;
     }
 }
