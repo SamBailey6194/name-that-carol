@@ -1,3 +1,11 @@
+function username() {
+
+}
+
+function showGuide() {
+
+}
+
 function showQuiz() {
 
 }

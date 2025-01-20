@@ -22,38 +22,63 @@
 
 <body>
 
+    <!-- Header of Page -->
     <header>
         <h1><i class="fa-solid fa-music"></i> Name That Carol <i class="fa-solid fa-music"></i></h1>
     </header>
 
-    <div class="box" id="guide">
+    <!-- Section to allow user to create a username -->
+    <div id="createuser" class="box">
+
+        <h2>Create a Username</h2>
+        <label for="user">Username</label> <input type="text" id="username">
+        <!-- Submit button for the answer the user has selected -->
+        <button class="submit--btn" data-type="submit">Submit User</button>
+
+    </div>
+
+    <!-- Section to explain to user how the quiz will work -->
+    <div id="guide" class="box">
+        <h2>Guide to Quiz</h2>
         <p>This is a fun quiz to test your knowledge of Christmas songs. Some of them are carols and others are songs
             that appeared in the charts.</p>
         <p>The songs story or theme will be described in a paragraph of text. Your job is to workout which song is being
-            referenced. Then type the answer into the box below and click submit. You will then be told if you got the
-            question right or wrong and the score box will update you. Then the new songs paragraph will appear.
+            referenced. Then select the answer using the options and click submit. You will then be told if you got the
+            question right or wrong and the score box will update you. Then the new songs paragraph will appear with new
+            options.
         </p>
         <p>Good Luck!</p>
     </div>
 
+    <!-- Quiz section to help JS reveal this section -->
     <div id="quiz">
 
+        <!-- Box to show the question and answer area -->
         <div class="box quiz-area">
 
+            <!-- Allowing user to see what question number they are on -->
+            <div id="questionno">
+
+            </div>
+
+            <!-- The question the user is being asked -->
             <div id="question">
                 <p>Question</p>
             </div>
 
+            <!-- Options the user can choose from -->
             <div class="answer-area">
                 <div class="guess--btn" id="options">
                     <p>Option</p>
                 </div>
             </div>
 
+            <!-- Submit button for the answer the user has selected -->
             <button class="submit--btn" data-type="submit">Submit Answer</button>
 
         </div>
 
+        <!-- Score section to show the user how many they have correct and wrong -->
         <div class="box score-area">
             <p class="scores">Correct: <span id="correct">0</span></p>
             <p class="scores">Wrong: <span id="wrong">0</span></p>
