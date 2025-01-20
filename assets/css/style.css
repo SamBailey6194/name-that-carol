@@ -112,12 +112,24 @@ h6 {
     border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--quartary-color);
+    padding: 6px;
+    border-width: 3px;
+    border-radius: 5px;
 }
 
 .submit--btn:hover {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
     border-color: var(--secondary-color);
+}
+
+/* Give styling to label for answer box  */
+.guess {
+    color: var(--secondary-color);
+}
+
+#answer {
+    margin-bottom: 2%;
 }
 
 /* Media Queries */
