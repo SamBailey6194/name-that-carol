@@ -151,6 +151,11 @@ h6 {
         font-size: 20px;
     }
 
+    /* Making answer box bigger on tablets */
+    #answer {
+        height: 25px;
+    }
+
 }
 
 /* Media Query for Laptop (1024px) */
@@ -164,6 +169,11 @@ h6 {
     /* Submit button being as big as the other text */
     .submit--btn {
         font-size: 25px;
+    }
+
+    /* Making answer box bigger on larger screens */
+    #answer {
+        height: 30px;
     }
     
 }
