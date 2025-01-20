@@ -1,4 +1,4 @@
-const quizData {
+const quizData = {
 
 }
 
@@ -19,5 +19,5 @@ function incrementWrong() {
 }
 
 function showResult() {
-    
+
 }
