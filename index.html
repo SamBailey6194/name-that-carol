@@ -33,7 +33,7 @@
         <h2>Create a Username</h2>
         <label for="user">Username</label> <input type="text" id="username">
         <!-- Submit button for the answer the user has selected -->
-        <button class="submit--btn" data-type="submit">Submit User</button>
+        <button class="submit--btn" data-type="create">Submit User</button>
 
     </div>
 
@@ -57,8 +57,8 @@
         <div class="box quiz-area">
 
             <!-- Allowing user to see what question number they are on -->
-            <div id="questionno">
-
+            <div>
+                <h2>Question <span id="questionno">1</span></h2>
             </div>
 
             <!-- The question the user is being asked -->
@@ -68,7 +68,7 @@
 
             <!-- Options the user can choose from -->
             <div class="answer-area">
-                <div class="guess--btn" id="options">
+                <div class="submit--btn" id="options">
                     <p>Option</p>
                 </div>
             </div>
@@ -80,6 +80,7 @@
 
         <!-- Score section to show the user how many they have correct and wrong -->
         <div class="box score-area">
+            <h2>Your Score</h2>
             <p class="scores">Correct: <span id="correct">0</span></p>
             <p class="scores">Wrong: <span id="wrong">0</span></p>
         </div>
@@ -87,10 +88,24 @@
     </div>
 
     <!-- Leaderboard Section -->
-     <div id="leaderbaord" class="box">
-        <h2>Leaderboard</h2>
-        <p>Compare your score with other users looking below</p>
-     </div>
+    <div class="box lboard">
+        <!-- Leaderboard explanation -->
+        <div>
+            <h2>Leaderboard</h2>
+            <p>Compare your score with other users looking below.</p>
+            <p>You can search for your username using the search box below. All usernames are case sensitive, please
+                remember that when searching.</p>
+            <label for="user">Username</label> <input type="search" id="search">
+            <!-- Submit button for the user to search -->
+            <button class="submit--btn" data-type="search">Search</button>
+        </div>
+
+        <!-- Actual leaderboard -->
+        <div id="leaderboard">
+            <!-- JS Code to insert leaderbaord -->
+        </div>
+
+    </div>
 
     <!-- Link to JavaScript File -->
     <script src="assets/js/script.js"></script>

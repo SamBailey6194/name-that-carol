@@ -65,12 +65,12 @@ h6 {
 }
 
 /* Spacing username box from submit user */
-#username {
+#username, #search {
     margin-bottom: 3%;
 }
 
 /* Coloring guide and leaderboard area */
-#guide, #leaderbaord {
+#guide, .lboard {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
 }
@@ -106,15 +106,13 @@ button {
 }
 
 /* Style Submit Button */
-.submit--btn,
-.guess--btn {
+.submit--btn {
     border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--quartary-color);
 }
 
-.submit--btn:hover,
-.guess--btn:hover {
+.submit--btn:hover {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
     border-color: var(--secondary-color);
@@ -152,7 +150,7 @@ button {
     }
 
     /* Making Username Box bigger */
-    #username {
+    #username, #search {
         height: 25px;
         font-size: 20px;
     }
@@ -173,7 +171,7 @@ button {
     }
 
     /* Making Username Box bigger */
-    #username {
+    #username, #search {
         height: 30px;
         font-size: 25px;
     }
