@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Reveal the div the user asks for when clicking relevant button
  */
-document.addEventListener("DOMContentLoaded", function () {
+function reveal() {
     const showGuide = document.getElementById("guide-btn");
     const showQuiz = document.getElementById("quiz-btn");
     const showLeaderboard = document.getElementById("lboard-btn");
@@ -44,41 +44,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const showQuiz2 = document.getElementById("quiz-btn2");
 
     // Reveal guide and hide username creation
-    showGuide.addEventListener("click", function (e) {
+    showGuide.addEventListener("click", function () {
         usernameDiv.classList.add("hidden");
         guideDiv.classList.remove("hidden");
     })
 
     // Reveal quiz and hide username creation
-    showQuiz.addEventListener("click", function (e) {
+    showQuiz.addEventListener("click", function () {
         usernameDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
     })
 
     // Reveal leaderboard and hide quiz
-    showLeaderboard.addEventListener("click", function (e) {
+    showLeaderboard.addEventListener("click", function () {
         quizDiv.classList.add("hidden");
         lboardDiv.classList.remove("hidden");
     })
 
     // Reveal guide and hide quiz
-    showGuide1.addEventListener("click", function (e) {
+    showGuide1.addEventListener("click", function () {
         quizDiv.classList.add("hidden");
         guideDiv.classList.remove("hidden");
     })
 
     // Reveal quiz and hide guide
-    showQuiz1.addEventListener("click", function (e) {
+    showQuiz1.addEventListener("click", function () {
         guideDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
     })
 
     // Reveal guide and hide username creation
-    showQuiz2.addEventListener("click", function (e) {
+    showQuiz2.addEventListener("click", function () {
         lboardDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
     })
-})
+}
 
 /**
  * Searches leaderboard
@@ -86,44 +86,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /**
+ * Randomize the quiz data array
+ * so the order of questions and options are randomized
+ */
+function shuffle(array){
+    for (let i = array.length - 1; i > 0; i--) {
+        const random = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[random] = array[random], array [i]];
+    }
+    return array;
+};
+
+/**
  * Questions, options and answered stored here
  */
 const quizData = [{
-        question: "It is Christmas, no need to be afraid. We are to spread a smile of joy and pray for the other ones. While you pray we are to feed the world too and let them know it is Christmas.",
-        options: ["Blue Christmas", "Jingle Bell Rock", "Do they know it's Christmas", "Santa Baby"],
-        answer: "Do they know it's Christmas"
-    },
-    {
-        question: "There is not a lot I want for Christmas, only one thing I need. Santa will not make me happy. Please make my wish come true. I definitely will not ask for much this Christmas. Please just come and hold me tight. I just want to see my baby.",
-        options: ["All I want for Christmas", "It's Beginning to look a lot like Christmas", "Feliz Navidad", "White Christmas"],
-        answer: "All I want for Christmas"
-    },
-    {
-        question: "On Christmas Eve Sinatra was swinging and we kissed on a corner and danced through the night. The boys of the NYPD were singing Galway Bay and the bells rang out for Christmas day.",
-        options: ["Santa Claus is Coming to Town", "Fairytale of New York", "Merry Xmas Everybody", "I wish it could be Christmas everyday"],
-        answer: "Fairytale of New York"
-    },
-    {
-        question: "There was no crib. But little Lord Jesus lay down his head. The stars looked down on Him while he was asleep. The cattle were lowing as He awoke with no crying.",
-        options: ["O Come All Ye Faithful", "We Three Kings", "Silent Night", "Away in a Manger"],
-        answer: "Away in a Manger"
-    },
-    {
-        question: "The angels sing and give glory to a new born King! There is a lot of joy to be proclaimed for Christ is born in Bethlehem. Christ is adored and is the everlasting Lord. Born so no man may die.",
-        options: ["Hark the Herald", "Little Donkey", "While Shepherds Watched", "Joy to the World"],
-        answer: "Hark the Herald"
-    },
-    {
-        question: "Israel is captive and mourns in lonely exile. But rejoice for Emmanuel shall come. He ordered all things and gave us a path of knowledge. Israel received the law and were in awe. They were expecting a branch from Jesse's family.",
-        options: ["O Little Town of Bethlehem", "O Come, O Come Emmanuel", "In the Bleak Midwinter", "The First Noel"],
-        answer: "O Come, O Come Emmanuel"
-    },
+    question: "It is Christmas, no need to be afraid. We are to spread a smile of joy and pray for the other ones. While you pray we are to feed the world too and let them know it is Christmas.",
+    options: ["Blue Christmas", "Jingle Bell Rock", "Do they know it's Christmas", "Santa Baby"],
+    answer: "Do they know it's Christmas"
+},
+{
+    question: "There is not a lot I want for Christmas, only one thing I need. Santa will not make me happy. Please make my wish come true. I definitely will not ask for much this Christmas. Please just come and hold me tight. I just want to see my baby.",
+    options: ["All I want for Christmas", "It's Beginning to look a lot like Christmas", "Feliz Navidad", "White Christmas"],
+    answer: "All I want for Christmas"
+},
+{
+    question: "On Christmas Eve Sinatra was swinging and we kissed on a corner and danced through the night. The boys of the NYPD were singing Galway Bay and the bells rang out for Christmas day.",
+    options: ["Santa Claus is Coming to Town", "Fairytale of New York", "Merry Xmas Everybody", "I wish it could be Christmas everyday"],
+    answer: "Fairytale of New York"
+},
+{
+    question: "There was no crib. But little Lord Jesus lay down his head. The stars looked down on Him while he was asleep. The cattle were lowing as He awoke with no crying.",
+    options: ["O Come All Ye Faithful", "We Three Kings", "Silent Night", "Away in a Manger"],
+    answer: "Away in a Manger"
+},
+{
+    question: "The angels sing and give glory to a new born King! There is a lot of joy to be proclaimed for Christ is born in Bethlehem. Christ is adored and is the everlasting Lord. Born so no man may die.",
+    options: ["Hark the Herald", "Little Donkey", "While Shepherds Watched", "Joy to the World"],
+    answer: "Hark the Herald"
+},
+{
+    question: "Israel is captive and mourns in lonely exile. But rejoice for Emmanuel shall come. He ordered all things and gave us a path of knowledge. Israel received the law and were in awe. They were expecting a branch from Jesse's family.",
+    options: ["O Little Town of Bethlehem", "O Come, O Come Emmanuel", "In the Bleak Midwinter", "The First Noel"],
+    answer: "O Come, O Come Emmanuel"
+},
 ]
+
+const randomQuestions = shuffle('quizData');
+const randomOptions = shuffle
+
+const questionElement = document.getElementById("question");
+const optionElement = document.getElementById("options");
+const answerButton = document.getElementById("answer");
 
 /**
  * Reveal questions in random order
  */
 function showQuestion() {
+
+    // Increase question number we are on
+    let oldQuestionNo = parseInt (document.getElementById('questionno').innerText);
+    document.getElementById('questionno').innerText = ++oldQuestionNo;
+
+    // Reveal random question
 
 }
 
@@ -138,14 +164,16 @@ function selectAnswer() {
  * Increases correct score by 1 if user gets answer right
  */
 function incrementScore() {
-
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = ++oldScore;
 }
 
 /**
  * Increases incorrect score by 1 if user gets answer right
  */
 function incrementWrong() {
-
+    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('wrong').innerText = ++oldScore;
 }
 
 /**
