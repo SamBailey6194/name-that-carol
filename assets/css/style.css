@@ -57,11 +57,13 @@ h6 {
     border-radius: 15px;
 }
 
-/* Hide divs */
-#guide,
-#quiz,
-#lboard {
+/* Hide divs on initial load */
+.hidden {
     display: none;
+}
+
+.reveal {
+    display: block;
 }
 
 /* Colouring username and quiz area */

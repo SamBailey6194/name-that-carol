@@ -1,13 +1,46 @@
 // Global variables for the different divs
-const username = document.getElementById("createUser");
-const guide = document.getElementById("guide");
-const quiz = document.getElementById("quiz");
-const lboard = document.getElementById("lboard");
+const usernameDiv = document.getElementById("createuser");
+const guideDiv = document.getElementById("guide");
+const quizDiv = document.getElementById("quiz");
+const lboardDiv = document.getElementById("lboard");
+
+/**
+ * Validating username creation
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if a username is already saved and display it
+    const savedUsername = localStorage.getItem('username');
+    const message = document.getElementById('message');
+
+    if (savedUsername) {
+        message.textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
+    }
+
+    // Form submission handler
+    const form = document.getElementById('formuser');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevents form from reloading the page
+
+        // Get entered username
+        const usernameInput = document.getElementById('username').value;
+
+        //Save username in localStorage
+        localStorage.setItem('username', usernameInput);
+
+        // display a message
+        message.textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`
+    });
+});
 
 /**
  * Reveal the div the user asks for when clicking relevant button
  */
-function reveal() {}
+function reveal() {
+    if (usernameDiv === ".reveal") {
+        usernameDiv.classList.add(".hidden");
+        guideDiv.classList.add(".reveal");
+    }
+}
 
 /**
  * Questions, options and answered stored here
@@ -50,7 +83,7 @@ const quizData = [{
  * Reveal questions in random order
  */
 function showQuestion() {
-    
+
 }
 
 /**

@@ -28,17 +28,27 @@
     </header>
 
     <!-- Section to allow user to create a username -->
-    <div id="createuser" class="box">
+    <div id="createuser" class="box reveal">
 
         <h2>Create a Username</h2>
-        <label for="user">Username</label> <input type="text" id="username">
-        <!-- Submit button for the answer the user has selected -->
-        <button type="submit" class="submit--btn" id="create" onclick="reveal">Submit User</button>
+        <form action="" id="formuser">
+            <label for="username">Username</label> <input type="text" name="username" id="username" required>
+            <!-- Submit button for the answer the user has selected -->
+            <button type="submit" class="submit--btn" onclick="validateForm()">Submit User</button>
+        </form>
+
+        <div id="usernameCreated">
+            <p id="message"></p>
+            <!-- Button that shows guide -->
+            <button type="button" class="submit--btn" id="guide-btn1" onclick="reveal()">Show Guide</button>
+            <!-- When ready user can click this to go to the quiz -->
+            <button class="submit--btn" id="quiz-btn1" onclick="reveal()">Go to Quiz</button>
+        </div>
 
     </div>
 
     <!-- Section to explain to user how the quiz will work -->
-    <div id="guide" class="box">
+    <div id="guide" class="box hidden">
         <h2>Guide to Quiz</h2>
         <p>This is a fun quiz to test your knowledge of Christmas songs. Some of them are carols and others are songs
             that appeared in the charts.</p>
@@ -49,11 +59,11 @@
         </p>
         <p>Good Luck!</p>
         <!-- When ready user can click this to go to the quiz -->
-        <button type="button" class="submit--btn" id="quiz-btn" onclick="reveal">Go to Quiz</button>
+        <button type="button" class="submit--btn" id="quiz-btn2" onclick="reveal()">Go to Quiz</button>
     </div>
 
     <!-- Quiz section to help JS reveal this section -->
-    <div id="quiz">
+    <div id="quiz" class="hidden">
 
         <!-- Box to show the question and answer area -->
         <div class="box quiz-area">
@@ -64,7 +74,7 @@
             </div>
 
             <!-- Button that shows guide -->
-            <button type="button" class="submit--btn" id="guide-btn">Showe Guide</button>
+            <button type="button" class="submit--btn" id="guide-btn2" onclick="reveal()">Show Guide</button>
 
             <!-- The question the user is being asked -->
             <div id="question">
@@ -93,7 +103,7 @@
     </div>
 
     <!-- Leaderboard Section -->
-    <div id="lboard" class="box">
+    <div id="lboard" class="box hidden">
         <!-- Leaderboard explanation -->
         <div>
             <h2>Leaderboard</h2>
@@ -111,7 +121,7 @@
         </div>
 
         <!-- When ready user can click this to go to the quiz -->
-        <button class="submit--btn" id="quiz-btn2" onclick="reveal">Go back to Quiz</button>
+        <button class="submit--btn" id="quiz-btn3" onclick="reveal()">Go back to Quiz</button>
 
     </div>
 
