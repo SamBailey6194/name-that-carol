@@ -85,10 +85,7 @@ function reveal() {
  */
 
 
-/**
- * Randomize the quiz data array
- * so the order of questions and options are randomized
- */
+// Fisher-Yates Algorithim to help randomize order of questions
 function shuffle(array){
     for (let i = array.length - 1; i > 0; i--) {
         const random = Math.floor(Math.random() * (i + 1));
@@ -133,8 +130,8 @@ const quizData = [{
 },
 ]
 
-const randomQuestions = shuffle('quizData');
-const randomOptions = shuffle
+const randomQuestions = shuffle(quizData);
+const randomOptions = shuffle(quizData.options);
 
 const questionElement = document.getElementById("question");
 const optionElement = document.getElementById("options");
@@ -156,7 +153,7 @@ function showQuestion() {
 /**
  * Checks answer user gives to the correct answer
  */
-function selectAnswer() {
+function selectAnswer(e) {
 
 }
 
