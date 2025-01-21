@@ -39,18 +39,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const showGuide = document.getElementById("guide-btn");
     const showQuiz = document.getElementById("quiz-btn");
     const showLeaderboard = document.getElementById("lboard-btn");
+    const showGuide1 = document.getElementById("guide-btn1");
+    const showQuiz1 = document.getElementById("quiz-btn1");
+    const showQuiz2 = document.getElementById("quiz-btn2");
 
     showGuide.addEventListener("click", function (e) {
-            usernameDiv.classList.add("hidden");
-            quizDiv.classList.add("hidden");
-            guideDiv.classList.remove("hidden");
+        usernameDiv.classList.add("hidden");
+        guideDiv.classList.remove("hidden");
     })
 
     showQuiz.addEventListener("click", function (e) {
         usernameDiv.classList.add("hidden");
+        quizDiv.classList.remove("hidden");
+    })
+
+    showLeaderboard.addEventListener("click", function (e) {
+        quizDiv.classList.add("hidden");
+        lboardDiv.classList.remove("hidden");
+    })
+
+    showGuide1.addEventListener("click", function (e) {
+        quizDiv.classList.add("hidden");
+        guideDiv.classList.remove("hidden");
+    })
+
+    showQuiz1.addEventListener("click", function (e) {
         guideDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
-})
+    })
+
+    showQuiz2.addEventListener("click", function (e) {
+        lboardDiv.classList.add("hidden");
+        quizDiv.classList.remove("hidden");
+    })
 })
 
 /**
