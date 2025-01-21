@@ -22,12 +22,12 @@ Below are the features for the website and at the end is listed any features tha
 
 ### Features Left to Implement
 
-- Create a login database so people can create accounts which would allow them to:
+- Create a login database by asking for user to create a password when they create their username so people can create permanent accounts which would allow them to:
   - Track their scores and comapre to past attempts
   - Compare to various leaderboards
   - Add friends
   - Access future quizzes we may implement
-- Add a page with leaderboards, and have this as a button on the quiz page, these could be:
+- Add extra categories to the leaderboards, these could be:
   - Friends
   - Local
   - National
