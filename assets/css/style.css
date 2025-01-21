@@ -58,19 +58,22 @@ h6 {
 }
 
 /* Colouring username and quiz area */
-#createuser, .quiz-area {
+#createuser,
+.quiz-area {
     background-color: var(--quartary-color);
     color: var(--secondary-color);
     text-align: center;
 }
 
 /* Spacing username box from submit user */
-#username, #search {
+#username,
+#search {
     margin-bottom: 3%;
 }
 
 /* Coloring guide and leaderboard area */
-#guide, .lboard {
+#guide,
+#lboard {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
 }
@@ -150,7 +153,8 @@ button {
     }
 
     /* Making Username Box bigger */
-    #username, #search {
+    #username,
+    #search {
         height: 25px;
         font-size: 20px;
     }
@@ -171,7 +175,8 @@ button {
     }
 
     /* Making Username Box bigger */
-    #username, #search {
+    #username,
+    #search {
         height: 30px;
         font-size: 25px;
     }

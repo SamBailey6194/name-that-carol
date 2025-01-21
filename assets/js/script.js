@@ -1,15 +1,27 @@
 /**
- * Reveal username creation box to user
+ * Reveal the div the user asks for when clicking relevant button
  */
-function username() {
+function reveal() {
+    const username = document.getElementById("createUser");
+    const guide = document.getElementById("guide");
+    const quiz = document.getElementById("quiz");
+    const lboardReveal = document.getElementById("lboard");
 
-}
+    function revealUser() {
+        if (username.style.display === 'none') {
+            username.style.display = 'block'
+        } else {
+            username.style.display = 'none'
+        }
+    }
 
-/**
- * Show guide to user after creating user
- * or anytime they click show guide button
- */
-function showGuide() {
+    function revealGuide() {
+        if (guide.style.display === 'none') {
+            guide.style.display = 'block'
+        } else {
+            guide.style.display = 'none'
+        }
+    }
 
 }
 
@@ -21,12 +33,9 @@ const quizData = {
 }
 
 /**
- * Reveal quiz and randomize order of questions
+ * Reveal questions in random order
  */
-function showQuiz() {
-    function showQuestion() {
-
-    }
+function showQuestion() {
 
 }
 
@@ -56,12 +65,5 @@ function incrementWrong() {
  * if they got it wrong it tells them what the answer was
  */
 function showResult() {
-
-}
-
-/**
- * Reveals leaderboard once quiz is complete
- */
-function showLeaderboard() {
 
 }
