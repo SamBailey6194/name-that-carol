@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
+ * Searches leaderboard
+ */
+
+
+/**
  * Questions, options and answered stored here
  */
 const quizData = [{
@@ -114,8 +119,6 @@ const quizData = [{
         answer: "O Come, O Come Emmanuel"
     },
 ]
-
-
 
 /**
  * Reveal questions in random order
