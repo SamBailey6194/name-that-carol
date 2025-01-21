@@ -43,31 +43,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const showQuiz1 = document.getElementById("quiz-btn1");
     const showQuiz2 = document.getElementById("quiz-btn2");
 
+    // Reveal guide and hide username creation
     showGuide.addEventListener("click", function (e) {
         usernameDiv.classList.add("hidden");
         guideDiv.classList.remove("hidden");
     })
 
+    // Reveal quiz and hide username creation
     showQuiz.addEventListener("click", function (e) {
         usernameDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
     })
 
+    // Reveal leaderboard and hide quiz
     showLeaderboard.addEventListener("click", function (e) {
         quizDiv.classList.add("hidden");
         lboardDiv.classList.remove("hidden");
     })
 
+    // Reveal guide and hide quiz
     showGuide1.addEventListener("click", function (e) {
         quizDiv.classList.add("hidden");
         guideDiv.classList.remove("hidden");
     })
 
+    // Reveal quiz and hide guide
     showQuiz1.addEventListener("click", function (e) {
         guideDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
     })
 
+    // Reveal guide and hide username creation
     showQuiz2.addEventListener("click", function (e) {
         lboardDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
