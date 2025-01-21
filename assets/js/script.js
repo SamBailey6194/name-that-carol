@@ -1,8 +1,8 @@
 // Global variables for the different divs
-let username = document.getElementById("createUser");
-let guide = document.getElementById("guide");
-let quiz = document.getElementById("quiz");
-let lboardReveal = document.getElementById("lboard");
+const username = document.getElementById("createUser");
+const guide = document.getElementById("guide");
+const quiz = document.getElementById("quiz");
+const lboard = document.getElementById("lboard");
 
 /**
  * Reveal the div the user asks for when clicking relevant button

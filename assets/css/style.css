@@ -58,13 +58,10 @@ h6 {
 }
 
 /* Hide divs */
-.hidden {
+#guide,
+#quiz,
+#lboard {
     display: none;
-}
-
-/* Class to use in javascript to help with reveal function */
-.reveal {
-    display: block;
 }
 
 /* Colouring username and quiz area */
