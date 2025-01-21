@@ -44,11 +44,13 @@ const quizData = [{
     },
 ]
 
+
+
 /**
  * Reveal questions in random order
  */
 function showQuestion() {
-
+    
 }
 
 /**
