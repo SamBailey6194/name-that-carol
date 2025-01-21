@@ -35,12 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Reveal the div the user asks for when clicking relevant button
  */
-function reveal() {
-    if (usernameDiv === ".reveal") {
-        usernameDiv.classList.add(".hidden");
-        guideDiv.classList.add(".reveal");
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const showGuide = document.getElementById("guide-btn");
+    const showQuiz = document.getElementById("quiz-btn");
+    const showLeaderboard = document.getElementById("lboard-btn");
+
+    showGuide.addEventListener("click", function (e) {
+            usernameDiv.classList.add("hidden");
+            quizDiv.classList.add("hidden");
+            guideDiv.classList.remove("hidden");
+    })
+
+    showQuiz.addEventListener("click", function (e) {
+        usernameDiv.classList.add("hidden");
+        guideDiv.classList.add("hidden");
+        quizDiv.classList.remove("hidden");
+})
+})
 
 /**
  * Questions, options and answered stored here

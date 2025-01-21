@@ -28,21 +28,21 @@
     </header>
 
     <!-- Section to allow user to create a username -->
-    <div id="createuser" class="box reveal">
+    <div id="createuser" class="box">
 
         <h2>Create a Username</h2>
         <form action="" id="formuser">
             <label for="username">Username</label> <input type="text" name="username" id="username" required>
             <!-- Submit button for the answer the user has selected -->
-            <button type="submit" class="submit--btn" onclick="validateForm()">Submit User</button>
+            <button type="submit" class="submit--btn">Submit User</button>
         </form>
 
         <div id="usernameCreated">
             <p id="message"></p>
             <!-- Button that shows guide -->
-            <button type="button" class="submit--btn" id="guide-btn1" onclick="reveal()">Show Guide</button>
+            <button type="button" class="submit--btn" id="guide-btn">Show Guide</button>
             <!-- When ready user can click this to go to the quiz -->
-            <button class="submit--btn" id="quiz-btn1" onclick="reveal()">Go to Quiz</button>
+            <button class="submit--btn" id="quiz-btn">Go to Quiz</button>
         </div>
 
     </div>
@@ -59,7 +59,7 @@
         </p>
         <p>Good Luck!</p>
         <!-- When ready user can click this to go to the quiz -->
-        <button type="button" class="submit--btn" id="quiz-btn2" onclick="reveal()">Go to Quiz</button>
+        <button type="button" class="submit--btn" id="quiz-btn">Go to Quiz</button>
     </div>
 
     <!-- Quiz section to help JS reveal this section -->
@@ -74,7 +74,7 @@
             </div>
 
             <!-- Button that shows guide -->
-            <button type="button" class="submit--btn" id="guide-btn2" onclick="reveal()">Show Guide</button>
+            <button type="button" class="submit--btn" id="guide-btn">Show Guide</button>
 
             <!-- The question the user is being asked -->
             <div id="question">
@@ -98,6 +98,9 @@
             <h2>Your Score</h2>
             <p class="scores">Correct: <span id="correct">0</span></p>
             <p class="scores">Wrong: <span id="wrong">0</span></p>
+
+            <!-- Leaderboard button to allow user to go to leaderboard -->
+            <button type="submit" class="submit--btn" id="lboard-btn">Go to Leaderboard</button>
         </div>
 
     </div>
@@ -121,7 +124,7 @@
         </div>
 
         <!-- When ready user can click this to go to the quiz -->
-        <button class="submit--btn" id="quiz-btn3" onclick="reveal()">Go back to Quiz</button>
+        <button class="submit--btn" id="quiz-btn">Go back to Quiz</button>
 
     </div>
 
