@@ -76,7 +76,7 @@ function reveal() {
         quizDiv.classList.remove("hidden");
     })
 
-    // Reveal guide and hide username creation
+    // Reveal quiz and hide leaderboard
     showQuiz2.addEventListener("click", function () {
         lboardDiv.classList.add("hidden");
         quizDiv.classList.remove("hidden");
@@ -89,14 +89,14 @@ function reveal() {
 
 
 // Fisher-Yates Algorithim to help randomize order of questions
-/*function shuffle(array) {
+function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const random = Math.floor(Math.random() * (i + 1));
 
         [array[i], array[random] = array[random], array[i]];
     }
     return array;
-};*/
+};
 
 /**
  * Questions, options and answered stored here
@@ -137,7 +137,8 @@ const questionElement = document.getElementById("question");
 const optionElement = document.getElementById("options");
 const answerButton = document.getElementById("answer");
 
-// const randomQuestion = shuffle(quizData);
+let randomQuestion = shuffle(quizData);
+let shuffledQuestion = randomQuestion[0];
 
 /**
  * Reveal questions in random order
@@ -149,7 +150,7 @@ function showQuestion() {
     document.getElementById('questionno').innerText = ++oldQuestionNo;
 
     // Reveal random question
-    const currentQuestion = quizData[randomQuestion];
+    const currentQuestion = quizData[shuffledQuestion];
     questionElement.innerText = currentQuestion.question;
 
     optionsElement.innerHTML = "";
@@ -166,7 +167,24 @@ function showQuestion() {
  * Checks answer user gives to the correct answer
  */
 function selectAnswer(e) {
-    
+    const selectedButton = e.target;
+    const answer = quizData[shuffledQuestion].answer;
+
+    if (selectedButton.innerText === answer) {
+        alert("Well done! You got it right!")
+        incrementScore();
+    } else {
+        alert(`Unlucky you got it wrong. The answer was ${quizData[shuffledQuestion].answer}`)
+        incrementWrong();
+    }
+
+    shuffledQuestion++;
+
+    if (shuffledQuestion < quizData.length) {
+        showQuestion();
+    } else {
+        showResult();
+    }
 }
 
 /**
@@ -183,14 +201,6 @@ function incrementScore() {
 function incrementWrong() {
     let oldScore = parseInt(document.getElementById('wrong').innerText);
     document.getElementById('wrong').innerText = ++oldScore;
-}
-
-/**
- * Reveals an alert box to show the user if they got it right
- * if they got it wrong it tells them what the answer was
- */
-function showAnswer() {
-
 }
 
 /**
