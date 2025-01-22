@@ -150,14 +150,16 @@ function showQuestion() {
     // Reveal random question
     const currentQuestion = quizData;
     questionElement.innerText = currentQuestion.question;
+    console.log(currentQuestion.question);
 
-    optionsElement.innerHTML = "";
+    // Reveal random options
+    optionElement.innerHTML = "";
     currentQuestion.options.forEach(option => {
         const button = document.createElement("button");
         button.innerText = option;
         button.classList.add("submit-btn")
         optionsElement.appendChild(button);
-        button.addEventListener("click", selectAnswer(e));
+        button.addEventListener("click", selectAnswer());
     });
 }
 
@@ -209,3 +211,5 @@ function showResult() {
     <h1>Quiz Completed!</h1>
     <p>Your score: ${oldScore}/${quizData.length}</p>`
 }
+
+showQuestion();
