@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (savedUsername) {
         message.textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
+        document.getElementById("guide-btn").classList.remove('hidden');
+        document.getElementById("quiz-btn").classList.remove('hidden');
     }
 
     // Form submission handler
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // display a message
         message.textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`
+        document.getElementById("guide-btn").classList.remove('hidden');
+        document.getElementById("quiz-btn").classList.remove('hidden');
     });
 });
 
@@ -61,9 +65,8 @@ function reveal() {
         lboardDiv.classList.remove("hidden");
     })
 
-    // Reveal guide and hide quiz
+    // Reveal guide above quiz
     showGuide1.addEventListener("click", function () {
-        quizDiv.classList.add("hidden");
         guideDiv.classList.remove("hidden");
     })
 
@@ -86,14 +89,14 @@ function reveal() {
 
 
 // Fisher-Yates Algorithim to help randomize order of questions
-function shuffle(array) {
+/*function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const random = Math.floor(Math.random() * (i + 1));
 
         [array[i], array[random] = array[random], array[i]];
     }
     return array;
-};
+};*/
 
 /**
  * Questions, options and answered stored here
@@ -134,7 +137,7 @@ const questionElement = document.getElementById("question");
 const optionElement = document.getElementById("options");
 const answerButton = document.getElementById("answer");
 
-const randomQuestion = shuffle(quizData);
+// const randomQuestion = shuffle(quizData);
 
 /**
  * Reveal questions in random order
@@ -163,22 +166,22 @@ function showQuestion() {
  * Checks answer user gives to the correct answer
  */
 function selectAnswer(e) {
-
+    
 }
 
 /**
  * Increases correct score by 1 if user gets answer right
  */
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = ++oldScore;
+    let oldScore = parseInt(document.getElementById('correct').innerText);
+    document.getElementById('correct').innerText = ++oldScore;
 }
 
 /**
  * Increases incorrect score by 1 if user gets answer right
  */
 function incrementWrong() {
-    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    let oldScore = parseInt(document.getElementById('wrong').innerText);
     document.getElementById('wrong').innerText = ++oldScore;
 }
 
@@ -186,6 +189,15 @@ function incrementWrong() {
  * Reveals an alert box to show the user if they got it right
  * if they got it wrong it tells them what the answer was
  */
-function showResult() {
+function showAnswer() {
 
+}
+
+/**
+ * Shows result of overall quiz when they finish
+ */
+function showResult() {
+    quizData.innerHTML = `
+    <h1>Quiz Completed!</h1>
+    <p>Your score: ${oldScore}/${quizData.length}</p>`
 }
