@@ -95,7 +95,6 @@ function shuffle(array) {
 
         [array[i], array[random] = array[random], array[i]];
     }
-    return array;
 };
 
 /**
@@ -133,12 +132,11 @@ const quizData = [{
     },
 ]
 
+shuffle(quizData);
+
 const questionElement = document.getElementById("question");
 const optionElement = document.getElementById("options");
 const answerButton = document.getElementById("answer");
-
-let randomQuestion = shuffle(quizData);
-let shuffledQuestion = randomQuestion[0];
 
 /**
  * Reveal questions in random order
@@ -150,7 +148,7 @@ function showQuestion() {
     document.getElementById('questionno').innerText = ++oldQuestionNo;
 
     // Reveal random question
-    const currentQuestion = quizData[shuffledQuestion];
+    const currentQuestion = quizData;
     questionElement.innerText = currentQuestion.question;
 
     optionsElement.innerHTML = "";
@@ -159,7 +157,7 @@ function showQuestion() {
         button.innerText = option;
         button.classList.add("submit-btn")
         optionsElement.appendChild(button);
-        button.addEventListener("click", selectAnswer);
+        button.addEventListener("click", selectAnswer(e));
     });
 }
 
@@ -168,19 +166,19 @@ function showQuestion() {
  */
 function selectAnswer(e) {
     const selectedButton = e.target;
-    const answer = quizData[shuffledQuestion].answer;
+    const answer = quizData.answer;
 
     if (selectedButton.innerText === answer) {
         alert("Well done! You got it right!")
         incrementScore();
     } else {
-        alert(`Unlucky you got it wrong. The answer was ${quizData[shuffledQuestion].answer}`)
+        alert(`Unlucky you got it wrong. The answer was ${quizData.answer}`)
         incrementWrong();
     }
 
-    shuffledQuestion++;
+    currentQuestion++;
 
-    if (shuffledQuestion < quizData.length) {
+    if (currentQuestion < quizData.length) {
         showQuestion();
     } else {
         showResult();
