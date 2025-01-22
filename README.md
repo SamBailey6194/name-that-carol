@@ -39,7 +39,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 ### Fixed Bugs
 
-- 
+- Buttons were showing at the wrong point, so I added an event listener with a class list to the relevant buttons
 
 ### Unfixed Bugs
 
@@ -53,7 +53,17 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 | Location | Link / Button | Expected Action | Pass / Fail |
 | --- | --- | --- | --- |
-| All Pages | Navbar Logo | Go to Homepage | Pass |
+| Username Creation | Username not entered | Tell user to fill in the field | Pass |
+| Username Creation | Username Entered and Submit Clicked | Reveal message that tells user, username was successfully created and guide and quiz buttons | Pass |
+| Username Creation | If username is stored locally already | Reveal welcome back message and guide and quiz button | Pass |
+| Username Creation | Click Show Guide | Hide username creation and reveal guide | Pass |
+| Username Creation | Click Go to Quiz | Hide username creation and reveal quiz | Pass |
+| Guide Div without Quiz below | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
+| Guide Div with Quiz below | Click Go to Quiz | Hide guide and move quiz to top | Pass |
+| Quiz Div | Click Show Guide | Reveal guide above Quiz | Pass |
+| Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
+| Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
+
 
 ### Validator Testing 
 
@@ -69,14 +79,14 @@ The website has been tested; including internal (buttons and navbar) & external 
 
     - Homepage
       
-    ![W3C validator - Homepage](insert link)
+    ![W3C validator](insert link)
     
 
 - CSS
   - Put CSS through Autoprefixer to ensure it works on all browsers
   - No errors were found when passing through the official Jigsaw validator, see links below.
   
-   ![(Jigsaw) validator 1](insertlink)
+   ![(Jigsaw) validator](insertlink)
 
 ## Deployment
 
@@ -126,6 +136,7 @@ Below are my credits for where I got inspiration for some of the code, where the
 
 - All icons are from font awesome
 - All fonts are from Google Fonts
+- Quiz questions were made up by myself
 
 ### Media
 
