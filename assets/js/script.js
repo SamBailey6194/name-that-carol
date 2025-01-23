@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form submission handler
     const form = document.getElementById('formuser');
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevents form from reloading the page
+        // Prevents form from reloading the page
+        event.preventDefault();
 
         // Get entered username
         const usernameInput = document.getElementById('username').value;
@@ -29,11 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
         //Save username in localStorage
         localStorage.setItem('username', usernameInput);
 
-        // display a message
+        // display a message and buttons
         message.textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`
         document.getElementById("guide-btn").classList.remove('hidden');
         document.getElementById("quiz-btn").classList.remove('hidden');
     });
+
+    // Allow user to hit enter key when typing in username
+    /*document.getElementById('username').addEventListener("keydown", function (event) {
+        if (event === "Enter") {
+            usernameInput
+        }
+    })*/
 });
 
 /**
@@ -148,16 +156,13 @@ function showQuestion() {
     document.getElementById('questionno').innerText = ++oldQuestionNo;
 
     // Reveal random question
-    const currentQuestion = quizData;
-    questionElement.innerText = currentQuestion.question;
-    console.log(currentQuestion.question);
+    questionElement.innerText = quizData.question;
+    console.log(quizData.question);
 
     // Reveal random options
-    optionElement.innerHTML = "";
-    currentQuestion.options.forEach(option => {
+    optionElement.innerHTML = quizData.options.forEach(option => {
         const button = document.createElement("button");
         button.innerText = option;
-        button.classList.add("submit-btn")
         optionsElement.appendChild(button);
         button.addEventListener("click", selectAnswer());
     });
