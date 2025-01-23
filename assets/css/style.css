@@ -108,6 +108,7 @@ h6 {
 
 /* Style Buttons */
 button {
+    margin: 2% 0.5%;
     padding: 6px;
     border-width: 3px;
     border-radius: 5px;
