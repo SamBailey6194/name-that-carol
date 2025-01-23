@@ -95,16 +95,6 @@ function reveal() {
  * Searches leaderboard
  */
 
-
-// Fisher-Yates Algorithim to help randomize order of questions
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const random = Math.floor(Math.random() * (i + 1));
-
-        [array[i], array[random] = array[random], array[i]];
-    }
-};
-
 /**
  * Questions, options and answered stored here
  */
@@ -140,6 +130,15 @@ const quizData = [{
     },
 ]
 
+// Fisher-Yates Algorithim to help randomize order of questions
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const random = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[random] = array[random], array[i]];
+    }
+};
+
 shuffle(quizData);
 
 const questionElement = document.getElementById("question");
@@ -156,15 +155,17 @@ function showQuestion() {
     document.getElementById('questionno').innerText = ++oldQuestionNo;
 
     // Reveal random question
-    questionElement.innerText = quizData.question;
-    console.log(quizData.question);
+    let currentQuestion = 0;
+    const question = quizData[currentQuestion];
+    questionElement.innerText = question.question;
 
     // Reveal random options
-    optionElement.innerHTML = quizData.options.forEach(option => {
+    optionsElement.innerHTML = "";
+    question.options.forEach(option => {
         const button = document.createElement("button");
         button.innerText = option;
         optionsElement.appendChild(button);
-        button.addEventListener("click", selectAnswer());
+        button.addEventListener("click", selectAnswer);
     });
 }
 
