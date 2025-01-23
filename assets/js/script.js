@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Allow user to hit enter key when typing in username
-    /*document.getElementById('username').addEventListener("keydown", function (event) {
+    document.getElementById('username').addEventListener("keydown", function (event) {
         if (event === "Enter") {
             usernameInput
         }
-    })*/
+    })
 });
 
 /**
