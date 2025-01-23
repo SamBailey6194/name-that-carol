@@ -106,25 +106,22 @@ h6 {
     color: #db4009;
 }
 
-/* Give buttons padding */
+/* Style Buttons */
 button {
     padding: 6px;
     border-width: 3px;
     border-radius: 5px;
-}
-
-/* Style Submit Button */
-.submit--btn {
     border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--quartary-color);
 }
 
-.submit--btn:hover {
+button:hover {
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
+
 
 /* Media Queries */
 
