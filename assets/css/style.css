@@ -1,34 +1,34 @@
 /* Google Fonts*/
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@700&family=Noto+Sans+Display:wdth@75&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@700&family=Noto+Sans+Display:wdth@75&display=swap");
 
 /* CSS Variables */
 :root {
-    --primary-font: "Lexend Giga", sans-serif;
-    --secondary-font: "Noto Sans Display", sans-serif;
-    /*Jet Black*/
-    --primary-color: #050606;
-    /*Blue Squeeze*/
-    --secondary-color: #e7f5f6;
-    /*Deep Sea Green*/
-    --tertiary-color: #0B5B5B;
-    /*Outer Space*/
-    --quartary-color: #314143;
+  --primary-font: "Lexend Giga", sans-serif;
+  --secondary-font: "Noto Sans Display", sans-serif;
+  /*Jet Black*/
+  --primary-color: #050606;
+  /*Blue Squeeze*/
+  --secondary-color: #e7f5f6;
+  /*Deep Sea Green*/
+  --tertiary-color: #0b5b5b;
+  /*Outer Space*/
+  --quartary-color: #314143;
 }
 
 /* Global Styles */
 
 /* Body Global Styles */
 body {
-    background-color: var(--secondary-color);
-    font-family: var(--secondary-font);
-    margin: 0;
+  background-color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  margin: 0;
 }
 
 /* Heading Global Style */
 header {
-    background-color: var(--tertiary-color);
-    margin: 0;
+  background-color: var(--tertiary-color);
+  margin: 0;
 }
 
 /* Header Global Styles */
@@ -38,161 +38,156 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--primary-font);
-    color: var(--secondary-color);
-    text-align: center;
-    font-size: 20px;
-    padding: 7px 0;
-    margin-top: 0;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  text-align: center;
+  font-size: 20px;
+  padding: 7px 0;
+  margin-top: 0;
 }
 
 /* Setting box styling */
 .box {
-    box-sizing: border-box;
-    width: 80%;
-    margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3%;
-    border-radius: 15px;
+  box-sizing: border-box;
+  width: 80%;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+  border-radius: 15px;
 }
 
 /* Hide divs on initial load */
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Colouring username and quiz area */
 #createuser,
 .quiz-area {
-    background-color: var(--quartary-color);
-    color: var(--secondary-color);
-    text-align: center;
+  background-color: var(--quartary-color);
+  color: var(--secondary-color);
+  text-align: center;
 }
 
 /* Spacing username box from submit user */
 #username,
 #search {
-    margin-bottom: 3%;
+  margin-bottom: 3%;
 }
 
 /* Coloring guide and leaderboard area */
 #guide,
 #lboard {
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
 }
 
 /* Coloring score-area and centering text */
 .score-area {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
 }
 
 /* Put Scores on same line and spacing them out */
 .scores {
-    display: inline-block;
-    padding-left: 10%;
-    padding-right: 10%;
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 /* Give the score number a colour */
 #correct {
-    color: #678C78;
+  color: #678c78;
 }
 
 #wrong {
-    color: #db4009;
+  color: #db4009;
 }
 
 /* Style Buttons */
 button {
-    margin: 2% 0.5%;
-    padding: 6px;
-    border-width: 3px;
-    border-radius: 5px;
-    border-color: var(--primary-color);
-    background-color: var(--secondary-color);
-    color: var(--quartary-color);
+  margin: 2% 0.5%;
+  padding: 6px;
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--quartary-color);
 }
 
-button:hover {
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-    border-color: var(--secondary-color);
+button:hover,
+button:active,
+button:focus {
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
-
 
 /* Media Queries */
 
 /* Media Query for Tablet (768px) */
 @media screen and (min-width: 768px) {
+  /* Make body text bigger and more readable */
+  body {
+    font-size: 20px;
+  }
 
-    /* Make body text bigger and more readable */
-    body {
-        font-size: 20px;
-    }
+  /* Header font-size */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 35px;
+  }
 
-    /* Header font-size */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 35px;
-    }
+  /* Space out scores better on tablets */
+  .scores {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
 
-    /* Space out scores better on tablets */
-    .scores {
-        padding-left: 18%;
-        padding-right: 18%;
-    }
+  /* Button being as big as the other text */
+  button {
+    font-size: 20px;
+  }
 
-    /* Button being as big as the other text */
-    button {
-        font-size: 20px;
-    }
-
-    /* Making Username Box bigger */
-    #username,
-    #search {
-        height: 25px;
-        font-size: 20px;
-    }
-
+  /* Making Username Box bigger */
+  #username,
+  #search {
+    height: 25px;
+    font-size: 20px;
+  }
 }
 
 /* Media Query for Laptop (1024px) */
 @media screen and (min-width: 1024px) {
+  /* Make body text bigger and more readable */
+  body {
+    font-size: 25px;
+  }
 
-    /* Make body text bigger and more readable */
-    body {
-        font-size: 25px;
-    }
+  /* Button being as big as the other text */
+  button {
+    font-size: 25px;
+  }
 
-    /* Button being as big as the other text */
-    button {
-        font-size: 25px;
-    }
-
-    /* Making Username Box bigger */
-    #username,
-    #search {
-        height: 30px;
-        font-size: 25px;
-    }
-
+  /* Making Username Box bigger */
+  #username,
+  #search {
+    height: 30px;
+    font-size: 25px;
+  }
 }
 
 /* Media Query for Large Screens (1440px) */
 @media screen and (min-width: 1440px) {
-
-    /* Space out scores better on tablets */
-    .scores {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-
+  /* Space out scores better on tablets */
+  .scores {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
 }
