@@ -34,7 +34,7 @@
         <form action="" id="formuser">
             <label for="username">Username</label> <input type="text" name="username" id="username" required>
             <!-- Submit button for the answer the user has selected -->
-            <button type="submit" class="submit--btn">Submit User</button>
+            <button type="submit">Submit User</button>
         </form>
 
         <div id="usernameCreated">
@@ -42,7 +42,7 @@
             <!-- Button that shows guide -->
             <button type="button" class="submit--btn hidden" id="guide-btn" onclick="reveal()">Show Guide</button>
             <!-- When ready user can click this to go to the quiz -->
-            <button class="submit--btn hidden" id="quiz-btn" onclick="reveal()">Go to Quiz</button>
+            <button class="hidden" id="quiz-btn" onclick="reveal()">Go to Quiz</button>
         </div>
 
     </div>
@@ -59,7 +59,7 @@
         </p>
         <p>Good Luck!</p>
         <!-- When ready user can click this to go to the quiz -->
-        <button type="button" class="submit--btn" id="quiz-btn1" onclick="reveal()">Go to Quiz</button>
+        <button type="button" id="quiz-btn1" onclick="reveal()">Go to Quiz</button>
     </div>
 
     <!-- Quiz section to help JS reveal this section -->
@@ -74,7 +74,7 @@
             </div>
 
             <!-- Button that shows guide -->
-            <button type="button" class="submit--btn" id="guide-btn1" onclick="reveal()">Show Guide</button>
+            <button type="button" id="guide-btn1" onclick="reveal()">Show Guide</button>
 
             <!-- The question the user is being asked -->
             <div id="question">
@@ -96,7 +96,7 @@
             <p class="scores">Wrong: <span id="wrong">0</span></p>
 
             <!-- Leaderboard button to allow user to go to leaderboard -->
-            <button type="submit" class="submit--btn hidden" id="lboard-btn" onclick="reveal()">Go to Leaderboard</button>
+            <button type="submit" class="hidden" id="lboard-btn" onclick="reveal()">Go to Leaderboard</button>
         </div>
 
     </div>
@@ -111,7 +111,7 @@
                 remember that when searching.</p>
             <label for="user">Username</label> <input type="search" id="search">
             <!-- Submit button for the user to search -->
-            <button type="button" class="submit--btn" id="searchlboard">Search</button>
+            <button type="button" id="searchlboard">Search</button>
         </div>
 
         <!-- Actual leaderboard -->
@@ -120,7 +120,7 @@
         </div>
 
         <!-- When ready user can click this to go to the quiz -->
-        <button class="submit--btn" id="quiz-btn2" onclick="reveal()">Go back to Quiz</button>
+        <button id="quiz-btn2" onclick="reveal()">Go back to Quiz</button>
 
     </div>
 
