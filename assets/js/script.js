@@ -135,7 +135,7 @@ const quizData = [{
 
 const questionElement = document.getElementById("question");
 const optionElement = document.getElementById("options");
-const answerButton = document.getElementById("answer");
+const answerButton = document.getElementById("answer-btn");
 
 /**
  * Reveal questions in random order
@@ -148,7 +148,7 @@ function showQuestion() {
 
     // Reveal random question
     let currentQuestion = 0;
-    const question = quizData[currentQuestion];
+    let question = quizData[currentQuestion];
     questionElement.innerText = question.question;
 
     // Reveal random options
@@ -166,13 +166,14 @@ function showQuestion() {
  */
 function selectAnswer(e) {
     const selectedButton = e.target;
-    const answer = quizData.answer;
+    const answer = question.answer;
+
 
     if (selectedButton.innerText === answer) {
         alert("Well done! You got it right!")
         incrementScore();
     } else {
-        alert(`Unlucky you got it wrong. The answer was ${quizData.answer}`)
+        alert(`Unlucky you got it wrong. The answer was ${question.answer}`)
         incrementWrong();
     }
 
