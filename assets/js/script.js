@@ -77,27 +77,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if a username is already saved and display it
   let savedUsername = localStorage.getItem("username");
   if (savedUsername) {
-    document.getElementById("message").textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
+    document.getElementById(
+      "message"
+    ).textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
     document.getElementById("guide-btn").classList.remove("hidden");
     document.getElementById("quiz-btn").classList.remove("hidden");
   }
 
   // Form submission handler
-  document.getElementById("formuser").addEventListener("submit", function (event) {
-    // Prevents form from reloading the page
-    event.preventDefault();
+  document
+    .getElementById("formuser")
+    .addEventListener("submit", function (event) {
+      // Prevents form from reloading the page
+      event.preventDefault();
 
-    // Get entered username
-    const usernameInput = document.getElementById("username").value;
+      // Get entered username
+      const usernameInput = document.getElementById("username").value;
 
-    //Save username in localStorage
-    localStorage.setItem("username", usernameInput);
+      //Save username in localStorage
+      localStorage.setItem("username", usernameInput);
 
-    // display a message and buttons
-    document.getElementById("message").textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`;
-    document.getElementById("guide-btn").classList.remove("hidden");
-    document.getElementById("quiz-btn").classList.remove("hidden");
-  });
+      // display a message and buttons
+      document.getElementById(
+        "message"
+      ).textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`;
+      document.getElementById("guide-btn").classList.remove("hidden");
+      document.getElementById("quiz-btn").classList.remove("hidden");
+    });
 
   // Allow user to hit enter key when typing in username
   document
@@ -113,15 +119,14 @@ document.addEventListener("DOMContentLoaded", () => {
  * Reveal the div the user asks for when clicking relevant button
  */
 function reveal(divName) {
-    document.getElementById("createuser").classList.add("hidden");
-    document.getElementById("guide").classList.add("hidden");
-    document.getElementById("quiz").classList.add("hidden");
-    document.getElementById("lboard").classList.add("hidden");
+  document.getElementById("createuser").classList.add("hidden");
+  document.getElementById("guide").classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("lboard").classList.add("hidden");
 
-    if (divName == "quiz")
-      showCurrentQuestion();
+  if (divName == "quiz") showCurrentQuestion();
 
-    document.getElementById(divName).classList.remove("hidden");
+  document.getElementById(divName).classList.remove("hidden");
 }
 
 /**
@@ -156,7 +161,7 @@ function moveToNextQuestion() {
 
 function showCurrentQuestion() {
   // Increase question number we are on
-  document.getElementById("questionno").innerText = (currentQuestionIndex + 1);
+  document.getElementById("questionno").innerText = currentQuestionIndex + 1;
 
   // Reveal random question
   let currentQuestion = quizData[currentQuestionIndex];
@@ -168,13 +173,13 @@ function showCurrentQuestion() {
 
   currentQuestion.options.forEach((option, index) => {
     let radio = document.createElement("input");
-    radio.type = 'radio';
-    radio.name = 'answer';
-    radio.id = 'answer' + index;
+    radio.type = "radio";
+    radio.name = "answer";
+    radio.id = "answer" + index;
     radio.value = option;
 
     let label = document.createElement("label");
-    label.htmlFor = 'answer' + index;
+    label.htmlFor = "answer" + index;
     label.innerText = option;
 
     optionsContainerElement.appendChild(radio);
@@ -186,19 +191,20 @@ function showCurrentQuestion() {
 /**
  * Checks answer user gives to the correct answer
  */
-function selectAnswer(e) {
-    let answer = quizData[currentQuestionIndex].answer;
+function selectAnswer() {
+  let correctAnswer = quizData[currentQuestionIndex].answer;
+  let userAnswer = document.querySelector('input[name="answer"]:checked').value;
 
-    if (e.target.innerText === answer) {
-      alert("Well done! You got it right!");
-      answersCorrect++;
-    } else {
-      alert(`Unlucky you got it wrong. The answer was ${answer}`);
-      answersWrong++;
-    }
+  if (userAnswer === correctAnswer) {
+    alert("Well done! You got it right!");
+    answersCorrect++;
+  } else {
+    alert(`Unlucky you got it wrong. The answer was ${correctAnswer}`);
+    answersWrong++;
+  }
 
-    updateScoreDisplay();
-    moveToNextQuestion();
+  updateScoreDisplay();
+  moveToNextQuestion();
 }
 
 /**
