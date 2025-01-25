@@ -126,9 +126,17 @@ function reveal(divName) {
   document.getElementById("quiz").classList.add("hidden");
   document.getElementById("lboard").classList.add("hidden");
 
-  if (divName == "quiz") showCurrentQuestion();
+  if (divName == "quiz") {
+    showCurrentQuestion()
+    document.getElementById("quiz-area").classList.remove("hidden");
+  }
 
   document.getElementById(divName).classList.remove("hidden");
+}
+
+function restart() {
+  reset();
+  reveal('quiz');
 }
 
 /**
@@ -155,6 +163,7 @@ function reset() {
   currentQuestionIndex = 0;
   answersCorrect = 0;
   answersWrong = 0;
+  updateScoreDisplay();
   shuffle(quizData);
 }
 
@@ -229,7 +238,6 @@ function updateScoreDisplay() {
  * Shows result of overall quiz when they finish
  */
 function showResult() {
-  document.getElementById("quiz-area").innerHTML = `
-    <h1>Quiz Completed!</h1>
-    <p>Your score: ${answersCorrect}/${quizData.length}</p>`;
+  document.getElementById("quiz-area").classList.add("hidden");
+  document.getElementById("lboard").classList.remove("hidden");
 }

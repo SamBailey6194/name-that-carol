@@ -121,16 +121,6 @@
         <h2>Your Score</h2>
         <p class="scores">Correct: <span id="correct">0</span></p>
         <p class="scores">Wrong: <span id="wrong">0</span></p>
-
-        <!-- Leaderboard button to allow user to go to leaderboard -->
-        <button
-          type="submit"
-          class="hidden"
-          id="lboard-btn"
-          onclick="reveal('lboard')"
-        >
-          Go to Leaderboard
-        </button>
       </div>
     </div>
 
@@ -155,7 +145,7 @@
       </div>
 
       <!-- When ready user can click this to go to the quiz -->
-      <button id="quiz-btn2" onclick="reveal('quiz')">Go back to Quiz</button>
+      <button id="quiz-btn2" onclick="restart()">Go back to Quiz</button>
     </div>
 
     <!-- Link to JavaScript File -->
