@@ -212,9 +212,17 @@ function showCurrentQuestion() {
  */
 function selectAnswer() {
   let correctAnswer = quizData[currentQuestionIndex].answer;
-  let userAnswer = document.querySelector('input[name="answer"]:checked').value;
+  let userAnswer = document.querySelector('input[name="answer"]:checked');
+  
+  // Stops user from continuing quiz until answer is given
+  if (userAnswer == null) {
+    alert("Please select an answer");
+    // Exits function to stop score from updating
+    return;
+  }
 
-  if (userAnswer === correctAnswer) {
+  // Checks answer and updates score
+  if (userAnswer.value === correctAnswer) {
     alert("Well done! You got it right!");
     answersCorrect++;
   } else {
