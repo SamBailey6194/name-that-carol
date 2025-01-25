@@ -1,102 +1,3 @@
-// Global variables for the different divs
-const usernameDiv = document.getElementById("createuser");
-const guideDiv = document.getElementById("guide");
-const quizDiv = document.getElementById("quiz");
-const lboardDiv = document.getElementById("lboard");
-
-/**
- * Validating username creation
- */
-document.addEventListener("DOMContentLoaded", () => {
-  // Check if a username is already saved and display it
-  const savedUsername = localStorage.getItem("username");
-  const message = document.getElementById("message");
-
-  if (savedUsername) {
-    message.textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
-    document.getElementById("guide-btn").classList.remove("hidden");
-    document.getElementById("quiz-btn").classList.remove("hidden");
-  }
-
-  // Form submission handler
-  const form = document.getElementById("formuser");
-  form.addEventListener("submit", function (event) {
-    // Prevents form from reloading the page
-    event.preventDefault();
-
-    // Get entered username
-    const usernameInput = document.getElementById("username").value;
-
-    //Save username in localStorage
-    localStorage.setItem("username", usernameInput);
-
-    // display a message and buttons
-    message.textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`;
-    document.getElementById("guide-btn").classList.remove("hidden");
-    document.getElementById("quiz-btn").classList.remove("hidden");
-  });
-
-  // Allow user to hit enter key when typing in username
-  document
-    .getElementById("username")
-    .addEventListener("keydown", function (event) {
-      if (event === "Enter") {
-        usernameInput;
-      }
-    });
-});
-
-/**
- * Reveal the div the user asks for when clicking relevant button
- */
-function reveal() {
-  const showGuide = document.getElementById("guide-btn");
-  const showQuiz = document.getElementById("quiz-btn");
-  const showLeaderboard = document.getElementById("lboard-btn");
-  const showGuide1 = document.getElementById("guide-btn1");
-  const showQuiz1 = document.getElementById("quiz-btn1");
-  const showQuiz2 = document.getElementById("quiz-btn2");
-
-  // Reveal guide and hide username creation
-  showGuide.addEventListener("click", function () {
-    usernameDiv.classList.add("hidden");
-    guideDiv.classList.remove("hidden");
-  });
-
-  // Reveal quiz and hide username creation
-  showQuiz.addEventListener("click", function () {
-    usernameDiv.classList.add("hidden");
-    quizDiv.classList.remove("hidden");
-  });
-
-  // Reveal leaderboard and hide quiz
-  showLeaderboard.addEventListener("click", function () {
-    quizDiv.classList.add("hidden");
-    lboardDiv.classList.remove("hidden");
-  });
-
-  // Reveal guide above quiz
-  showGuide1.addEventListener("click", function () {
-    guideDiv.classList.remove("hidden");
-  });
-
-  // Reveal quiz and hide guide
-  showQuiz1.addEventListener("click", function () {
-    guideDiv.classList.add("hidden");
-    quizDiv.classList.remove("hidden");
-  });
-
-  // Reveal quiz and hide leaderboard
-  showQuiz2.addEventListener("click", function () {
-    lboardDiv.classList.add("hidden");
-    quizDiv.classList.remove("hidden");
-  });
-}
-
-/**
- * Searches leaderboard
- */
-
 /**
  * Questions, options and answered stored here
  */
@@ -169,84 +70,150 @@ const quizData = [
   },
 ];
 
-// Fisher-Yates Algorithim to help randomize order of questions
+/**
+ * Validating username creation
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if a username is already saved and display it
+  let savedUsername = localStorage.getItem("username");
+  if (savedUsername) {
+    document.getElementById("message").textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
+    document.getElementById("guide-btn").classList.remove("hidden");
+    document.getElementById("quiz-btn").classList.remove("hidden");
+  }
 
-const questionElement = document.getElementById("question");
-const optionElement = document.getElementById("options");
-const answerButton = document.getElementById("answer-btn");
+  // Form submission handler
+  document.getElementById("formuser").addEventListener("submit", function (event) {
+    // Prevents form from reloading the page
+    event.preventDefault();
+
+    // Get entered username
+    const usernameInput = document.getElementById("username").value;
+
+    //Save username in localStorage
+    localStorage.setItem("username", usernameInput);
+
+    // display a message and buttons
+    document.getElementById("message").textContent = `Username saved: ${usernameInput}! Read the guide first and then enjoy the quiz!`;
+    document.getElementById("guide-btn").classList.remove("hidden");
+    document.getElementById("quiz-btn").classList.remove("hidden");
+  });
+
+  // Allow user to hit enter key when typing in username
+  document
+    .getElementById("username")
+    .addEventListener("keydown", function (event) {
+      if (event === "Enter") {
+        usernameInput;
+      }
+    });
+});
+
+/**
+ * Reveal the div the user asks for when clicking relevant button
+ */
+function reveal(divName) {
+    document.getElementById("createuser").classList.add("hidden");
+    document.getElementById("guide").classList.add("hidden");
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("lboard").classList.add("hidden");
+
+    if (divName == "quiz")
+      showCurrentQuestion();
+
+    document.getElementById(divName).classList.remove("hidden");
+}
+
+/**
+ * Searches leaderboard
+ */
+
+// Fisher-Yates Algorithim to help randomize order of questions
 
 /**
  * Reveal questions in random order
  */
-function showQuestion() {
+var currentQuestionIndex = 0;
+var answersCorrect = 0;
+var answersWrong = 0;
+
+function restart() {
+  currentQuestionIndex = 0;
+  answersCorrect = 0;
+  answersWrong = 0;
+  showCurrentQuestion();
+}
+
+function moveToNextQuestion() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quizData.length) {
+    showCurrentQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showCurrentQuestion() {
   // Increase question number we are on
-  let oldQuestionNo = parseInt(document.getElementById("questionno").innerText);
-  document.getElementById("questionno").innerText = ++oldQuestionNo;
+  document.getElementById("questionno").innerText = (currentQuestionIndex + 1);
 
   // Reveal random question
-  let currentQuestion = 0;
-  let question = quizData[currentQuestion];
-  questionElement.innerText = question.question;
+  let currentQuestion = quizData[currentQuestionIndex];
+  document.getElementById("question").innerText = currentQuestion.question;
 
   // Reveal random options
-  optionElement.innerHTML = "";
-  question.options.forEach((option) => {
-    const button = document.createElement("button");
-    button.innerText = option;
-    optionElement.appendChild(button);
-    button.addEventListener("click", selectAnswer);
+  let optionsContainerElement = document.getElementById("options");
+  optionsContainerElement.innerHTML = "";
+
+  currentQuestion.options.forEach((option, index) => {
+    let radio = document.createElement("input");
+    radio.type = 'radio';
+    radio.name = 'answer';
+    radio.id = 'answer' + index;
+    radio.value = option;
+
+    let label = document.createElement("label");
+    label.htmlFor = 'answer' + index;
+    label.innerText = option;
+
+    optionsContainerElement.appendChild(radio);
+    optionsContainerElement.appendChild(label);
+    optionsContainerElement.appendChild(document.createElement("br"));
   });
 }
 
 /**
  * Checks answer user gives to the correct answer
  */
-function selectAnswer() {
-  answerButton.addEventListener("submit", function (e) {
-    const selectedButton = e.target;
-    const answer = quizData[question].answer;
+function selectAnswer(e) {
+    let answer = quizData[currentQuestionIndex].answer;
 
-    if (selectedButton.innerText === answer) {
+    if (e.target.innerText === answer) {
       alert("Well done! You got it right!");
-      incrementScore();
+      answersCorrect++;
     } else {
-      alert(`Unlucky you got it wrong. The answer was ${quizData[question].answer}`);
-      incrementWrong();
+      alert(`Unlucky you got it wrong. The answer was ${answer}`);
+      answersWrong++;
     }
 
-    question++;
-
-    if (question < quizData.length) {
-      showQuestion();
-    } else {
-      showResult();
-    }
-  });
+    updateScoreDisplay();
+    moveToNextQuestion();
 }
 
 /**
- * Increases correct score by 1 if user gets answer right
+ * Redisplay the score
  */
-function incrementScore() {
-  const correctScore = parseInt(document.getElementById("correct").innerText);
-  document.getElementById("correct").innerText = ++correctScore;
-}
-
-/**
- * Increases incorrect score by 1 if user gets answer right
- */
-function incrementWrong() {
-  const wrongScore = parseInt(document.getElementById("wrong").innerText);
-  document.getElementById("wrong").innerText = ++wrongScore;
+function updateScoreDisplay() {
+  document.getElementById("correct").innerText = answersCorrect;
+  document.getElementById("wrong").innerText = answersWrong;
 }
 
 /**
  * Shows result of overall quiz when they finish
  */
 function showResult() {
-  quizData.innerHTML = `
+  document.getElementById("quiz-area").innerHTML = `
     <h1>Quiz Completed!</h1>
-    <p>Your score: ${correctScore}/${quizData.length}</p>`;
+    <p>Your score: ${answersCorrect}/${quizData.length}</p>`;
 }
-
-showQuestion();
