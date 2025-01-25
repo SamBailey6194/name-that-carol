@@ -113,6 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
         usernameInput;
       }
     });
+
+    reset();
 });
 
 /**
@@ -134,6 +136,13 @@ function reveal(divName) {
  */
 
 // Fisher-Yates Algorithim to help randomize order of questions
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const random = Math.floor(Math.random() * (i + 1));
+
+      [array[i], array[random]] = [array[random], array[i]];
+  }
+};
 
 /**
  * Reveal questions in random order
@@ -142,11 +151,11 @@ var currentQuestionIndex = 0;
 var answersCorrect = 0;
 var answersWrong = 0;
 
-function restart() {
+function reset() {
   currentQuestionIndex = 0;
   answersCorrect = 0;
   answersWrong = 0;
-  showCurrentQuestion();
+  shuffle(quizData);
 }
 
 function moveToNextQuestion() {
@@ -168,6 +177,7 @@ function showCurrentQuestion() {
   document.getElementById("question").innerText = currentQuestion.question;
 
   // Reveal random options
+  shuffle(currentQuestion.options);
   let optionsContainerElement = document.getElementById("options");
   optionsContainerElement.innerHTML = "";
 
