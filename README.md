@@ -12,13 +12,45 @@ Below are the features for the website and at the end is listed any features tha
 
 ### Existing Features
 
-- __Home Page__
+#### Username Creation
 
-  - __Header__
-
-    - 
+  - When the user first accesses the page they are invited to create a username, the user can either hit enter or click submit user
+  - Once created it shows a message that they have created a username and it has been saved and the guide and quiz buttons appear
+  - If the user is revisiting the site they are welcomed back and can go to the guide or the quiz
     
-    ![Homepage Header](insert link)
+  ![UsernameCreation](assets\readmeimgs\usernamecreation.png)
+
+  ![UsernameCreated](assets\readmeimgs\usernamecreatedmessage.png)
+
+  ![UserReturns](assets\readmeimgs\userreturns.png)
+
+#### Guide
+
+  - Here the user can read how to do the quiz
+  - They can then click go to quiz when they are ready
+    - If they accessed the guide from the username creation when they click the go to quiz button it starts them from question 1
+    - If they accessed the guide from the quiz area when they click go to quiz button they join the quiz from where they left off
+    
+  ![Guide](assets\readmeimgs\guidetoquiz.png)
+
+#### Quiz
+
+  - Here the user can test their knowledge on christmas songs, both carols and popular songs
+  - They can click the answer they think it is either by clicking the radio buttons or the name of the song
+  - Once they are happy with their choice they can click submit answer and a alert box pops up and tells them if they got it correct or wrong, if wrong it tells them the correct answer
+  - The scoreboard then updates either the correct or wrong score
+  - The question order is randomised
+  - For each question the order of the options are randomised as well
+  - The randomisation enables for users to redo the quiz and have to read through the questions and options carefully rather than remembering where to click
+    
+  ![Quiz](assets\readmeimgs\quizsection.png)
+
+#### Quiz Finished
+
+  - Here the user can see their score in terms of how many they got correct and how many wrong
+  - There is also a button that allows them to restart the quiz if they so wish
+    
+  ![EndofQuiz](assets\readmeimgs\quizfinished.png)
 
 ### Features Left to Implement
 
