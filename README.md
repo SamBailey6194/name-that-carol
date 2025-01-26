@@ -27,7 +27,7 @@ Below are the features for the website and at the end is listed any features tha
   - Compare to various leaderboards
   - Add friends
   - Access future quizzes we may implement
-- Add extra categories to the leaderboards, these could be:
+- Add a leaderboard that is stored on a database and allow the below as leaderboards they can look at:
   - Friends
   - Local
   - National
@@ -40,14 +40,17 @@ The website has been tested; including internal (buttons and navbar) & external 
 ### Fixed Bugs
 
 - Buttons were showing at the wrong point, so I added an event listener with a class list to the relevant buttons
+- Quiz Data was not shuffling due to missing [ ] at the correct points
+- Show Guide and Go to Quiz buttons on username page were needing to be double clicked due to onclick in HTML and addEventListeners in the JS file, tidied up the function reveal() which is onclick for the buttons in HTML file
+- Quiz wasn't revealing itself after showing user their final score using Go to Quiz button in scoreboard section, created an onclick function of restart that accesses reset and reveal functions in JS
+- Answer was undefined after user submitted answer due to answer variable wasn't in the selectAnswer function
+- Options when clicked were submitting the answer rather than submit answer button submitting the answer due to the element being a button, therefore it was changed to a radio list and label
+- Clicking the name of the song wasn't selecting it as the answer due to incorrect attributes assigned to the label
+- Submit answer was returning an error and increase the wrong score when it was clicked without an answer being selected. Added an if statement and return to exit the function to stop the score from updating and tell the user to select an answer
 
 ### Unfixed Bugs
 
 - 
-
-#### Attempted Fixes
-
-
 
 ### Links and Actions
 
@@ -61,6 +64,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Guide Div without Quiz below | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
 | Guide Div with Quiz below | Click Go to Quiz | Hide guide and move quiz to top | Pass |
 | Quiz Div | Click Show Guide | Reveal guide above Quiz | Pass |
+| Quiz Div | Click Submit Answer | If user hasn't selected an answer an alert box appears telling the user to select an answer | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
 

@@ -87,9 +87,7 @@
       </p>
       <p>Good Luck!</p>
       <!-- When ready user can click this to go to the quiz -->
-      <button type="button" onclick="reveal('quiz')">
-        Go to Quiz
-      </button>
+      <button type="button" onclick="reveal('quiz')">Go to Quiz</button>
     </div>
 
     <!-- Quiz section to help JS reveal this section -->
@@ -102,9 +100,7 @@
         </div>
 
         <!-- Button that shows guide -->
-        <button type="button" onclick="reveal('guide')">
-          Show Guide
-        </button>
+        <button type="button" onclick="reveal('guide')">Show Guide</button>
 
         <!-- The question the user is being asked -->
         <div id="question"></div>
@@ -121,6 +117,12 @@
         <h2>Your Score</h2>
         <p class="scores">Correct: <span id="correct">0</span></p>
         <p class="scores">Wrong: <span id="wrong">0</span></p>
+        <!-- Allow user to restart the quiz -->
+        <div>
+          <button type="button" id="restart" class="hidden" onclick="restart()">
+            Go to Quiz
+          </button>
+        </div>
       </div>
     </div>
 

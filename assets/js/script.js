@@ -116,6 +116,8 @@ function reveal(divName) {
   document.getElementById("createuser").classList.add("hidden");
   document.getElementById("guide").classList.add("hidden");
   document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("restart").classList.add("hidden");
+
 
   if (divName == "quiz") {
     showCurrentQuestion();
@@ -234,5 +236,5 @@ function updateScoreDisplay() {
  */
 function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
-  document.getElementById("lboard").classList.remove("hidden");
+  document.getElementById("restart").classList.remove("hidden");
 }
