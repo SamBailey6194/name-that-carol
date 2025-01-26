@@ -70,13 +70,12 @@ const quizData = [
   },
 ];
 
-// Locally stored username variable
-var savedUsername = localStorage.getItem("username");
-
 /**
  * Validating username creation
  */
 document.addEventListener("DOMContentLoaded", () => {
+  let savedUsername = localStorage.getItem("username");
+
   // Check if a username is already saved and display it
   if (savedUsername) {
     document.getElementById(
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("quiz-btn").classList.remove("hidden");
     });
 
-    reset();
+  reset();
 });
 
 /**
@@ -117,10 +116,9 @@ function reveal(divName) {
   document.getElementById("createuser").classList.add("hidden");
   document.getElementById("guide").classList.add("hidden");
   document.getElementById("quiz").classList.add("hidden");
-  document.getElementById("lboard").classList.add("hidden");
 
   if (divName == "quiz") {
-    showCurrentQuestion()
+    showCurrentQuestion();
     document.getElementById("quiz-area").classList.remove("hidden");
   }
 
@@ -129,21 +127,17 @@ function reveal(divName) {
 
 function restart() {
   reset();
-  reveal('quiz');
+  reveal("quiz");
 }
-
-/**
- * Searches leaderboard
- */
 
 // Fisher-Yates Algorithim to help randomize order of questions
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
-      const random = Math.floor(Math.random() * (i + 1));
+    const random = Math.floor(Math.random() * (i + 1));
 
-      [array[i], array[random]] = [array[random], array[i]];
+    [array[i], array[random]] = [array[random], array[i]];
   }
-};
+}
 
 /**
  * Reveal questions in random order
@@ -206,7 +200,7 @@ function showCurrentQuestion() {
 function selectAnswer() {
   let correctAnswer = quizData[currentQuestionIndex].answer;
   let userAnswer = document.querySelector('input[name="answer"]:checked');
-  
+
   // Stops user from continuing quiz until answer is given
   if (userAnswer == null) {
     alert("Please select an answer");
