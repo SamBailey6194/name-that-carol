@@ -102,7 +102,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
 | Quiz Div | When final question has been answered | Hide question area and only show the scoreboard with a button Restart Quiz appearing | Pass |
-Scoreboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
+| Scoreboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
 
 
 ### Validator Testing 
