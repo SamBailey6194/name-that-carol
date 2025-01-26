@@ -58,15 +58,18 @@ The website has been tested; including internal (buttons and navbar) & external 
 | --- | --- | --- | --- |
 | Username Creation | Username not entered | Tell user to fill in the field | Pass |
 | Username Creation | Username Entered and Submit Clicked | Reveal message that tells user, username was successfully created and guide and quiz buttons | Pass |
+| Username Creation | Username Entered and user hit enter | Reveal message that tells user, username was successfully created and guide and quiz buttons | Pass |
 | Username Creation | If username is stored locally already | Reveal welcome back message and guide and quiz button | Pass |
 | Username Creation | Click Show Guide | Hide username creation and reveal guide | Pass |
 | Username Creation | Click Go to Quiz | Hide username creation and reveal quiz | Pass |
-| Guide Div without Quiz below | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
-| Guide Div with Quiz below | Click Go to Quiz | Hide guide and move quiz to top | Pass |
-| Quiz Div | Click Show Guide | Reveal guide above Quiz | Pass |
+| Guide Div accessed from Username Creation | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
+| Guide Div accessed from Quiz div | Click Go to Quiz | Hide guide and reveal quiz with the last question the answer was on and the options button below | Pass |
+| Quiz Div | Click Show Guide | Reveal guide | Pass |
 | Quiz Div | Click Submit Answer | If user hasn't selected an answer an alert box appears telling the user to select an answer | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
+Quiz Div | When final question has been answered | Hide question area and only show the scoreboard with a button Restart Quiz appearing | Pass |
+Scoreboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
 
 
 ### Validator Testing 
@@ -141,7 +144,3 @@ Below are my credits for where I got inspiration for some of the code, where the
 - All icons are from font awesome
 - All fonts are from Google Fonts
 - Quiz questions were made up by myself
-
-### Media
-
-- 
