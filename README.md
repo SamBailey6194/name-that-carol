@@ -38,6 +38,7 @@ Below are the features for the website and at the end is listed any features tha
   - Here the user can test their knowledge on christmas songs, both carols and popular songs
   - They can click the answer they think it is either by clicking the radio buttons or the name of the song
   - Once they are happy with their choice they can click submit answer and a alert box pops up and tells them if they got it correct or wrong, if wrong it tells them the correct answer
+  - If they click submit without selecting an answer an alert box appears telling them to select an answer
   - The scoreboard then updates either the correct or wrong score
   - The question order is randomised
   - For each question the order of the options are randomised as well
@@ -100,7 +101,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Quiz Div | Click Submit Answer | If user hasn't selected an answer an alert box appears telling the user to select an answer | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
 | Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
-Quiz Div | When final question has been answered | Hide question area and only show the scoreboard with a button Restart Quiz appearing | Pass |
+| Quiz Div | When final question has been answered | Hide question area and only show the scoreboard with a button Restart Quiz appearing | Pass |
 Scoreboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
 
 
