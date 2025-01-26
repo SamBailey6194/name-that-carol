@@ -123,6 +123,11 @@ button:hover {
   border-color: var(--secondary-color);
 }
 
+/* Create a bottom margin from question paragraph */
+#question {
+  margin-bottom: 2%;
+}
+
 /* Media Queries */
 
 /* Media Query for Tablet (768px) */
