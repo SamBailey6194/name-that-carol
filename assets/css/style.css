@@ -48,7 +48,8 @@ h6 {
 
 /* Setting box styling */
 .box {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 80%;
   margin-top: 1%;
   margin-left: auto;
