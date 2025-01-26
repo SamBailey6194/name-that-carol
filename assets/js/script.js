@@ -107,15 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("quiz-btn").classList.remove("hidden");
     });
 
-  // Allow user to hit enter key when typing in username
-  document
-    .getElementById("username")
-    .addEventListener("keydown", function (event) {
-      if (event === "Enter") {
-        usernameInput;
-      }
-    });
-
     reset();
 });
 

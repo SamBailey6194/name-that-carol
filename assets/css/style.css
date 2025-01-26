@@ -117,9 +117,7 @@ button {
   color: var(--quartary-color);
 }
 
-button:hover,
-button:active,
-button:focus {
+button:hover {
   background-color: var(--tertiary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
