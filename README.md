@@ -4,7 +4,7 @@
 
 The decision to make this website is due to the user stories found [here](userstory.md).
 
-![Responsive Mockup](insert link)
+![Responsive Mockup](assets\readmeimgs\amiresponsive.png)
 
 ## Features 
 
@@ -50,7 +50,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 ### Unfixed Bugs
 
-- 
+- None
 
 ### Links and Actions
 
@@ -79,21 +79,27 @@ Scoreboard | When restart quiz is clicked | Reveal question area again above sco
 
   - Homepage
 
-  ![Lighthouse - Homepage](insert link)
+  ![Lighthouse - Homepage](assets\readmeimgs\lighthousescore.png)
 
 - HTML
   - No errors were returned when passing through the official W3C Validator, see images below for each page.
 
     - Homepage
       
-    ![W3C validator](insert link)
+    ![W3C validator](assets\readmeimgs\htmlvalidator.png)
     
 
 - CSS
   - Put CSS through Autoprefixer to ensure it works on all browsers
   - No errors were found when passing through the official Jigsaw validator, see links below.
   
-   ![(Jigsaw) validator](insertlink)
+   ![Jigsaw validator](assets\readmeimgs\cssvalidator.png)
+
+- JavaScript
+  - Warnings produced were to do with browser compatibility
+  - The two unused functions mentioned are used via onclick in HTML
+
+  ![JSHint validator](assets\readmeimgs\jsvalidator.png)
 
 ## Deployment
 
@@ -106,7 +112,7 @@ This section desribes how I deployed my website
   - In the "Branch" section "main" was selected as the branch then "/root" was selected
   - Click "save" and the GitHub Pages was deployed
 
-The live link can be found here - INSERT LINK
+The live link can be found [here](https://sambailey6194.github.io/name-that-carol/).
 
 ## Cloning
 
