@@ -70,12 +70,14 @@ const quizData = [
   },
 ];
 
+// Locally stored username variable
+var savedUsername = localStorage.getItem("username");
+
 /**
  * Validating username creation
  */
 document.addEventListener("DOMContentLoaded", () => {
   // Check if a username is already saved and display it
-  let savedUsername = localStorage.getItem("username");
   if (savedUsername) {
     document.getElementById(
       "message"

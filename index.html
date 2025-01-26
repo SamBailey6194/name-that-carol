@@ -53,12 +53,12 @@
         <button type="submit">Submit User</button>
       </form>
 
-      <div id="usernameCreated">
+      <div>
         <p id="message"></p>
         <!-- Button that shows guide -->
         <button
           type="button"
-          class="submit--btn hidden"
+          class="hidden"
           id="guide-btn"
           onclick="reveal('guide')"
         >
@@ -87,7 +87,7 @@
       </p>
       <p>Good Luck!</p>
       <!-- When ready user can click this to go to the quiz -->
-      <button type="button" id="quiz-btn1" onclick="reveal('quiz')">
+      <button type="button" onclick="reveal('quiz')">
         Go to Quiz
       </button>
     </div>
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Button that shows guide -->
-        <button type="button" id="guide-btn1" onclick="reveal('guide')">
+        <button type="button" onclick="reveal('guide')">
           Show Guide
         </button>
 
@@ -113,7 +113,7 @@
         <div class="answer-area" id="options"></div>
 
         <!-- Submit button for the answer the user has selected -->
-        <button id="answer-btn" onclick="selectAnswer()">Submit Answer</button>
+        <button onclick="selectAnswer()">Submit Answer</button>
       </div>
 
       <!-- Score section to show the user how many they have correct and wrong -->
@@ -136,7 +136,7 @@
         </p>
         <label for="user">Username</label> <input type="search" id="search" />
         <!-- Submit button for the user to search -->
-        <button type="button" id="searchlboard">Search</button>
+        <button type="button" onclick="search()">Search</button>
       </div>
 
       <!-- Actual leaderboard -->
@@ -145,7 +145,7 @@
       </div>
 
       <!-- When ready user can click this to go to the quiz -->
-      <button id="quiz-btn2" onclick="restart()">Go back to Quiz</button>
+      <button onclick="restart()">Go back to Quiz</button>
     </div>
 
     <!-- Link to JavaScript File -->
