@@ -194,4 +194,24 @@ button:hover {
     padding-left: 20%;
     padding-right: 20%;
   }
+
+   /* Make body text bigger and more readable */
+   body {
+    font-size: 35px;
+  }
+
+  /* Button being as big as the other text */
+  button {
+    font-size: 35px;
+  }
+
+  /* Header font-size */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 50px;
+  }
 }
