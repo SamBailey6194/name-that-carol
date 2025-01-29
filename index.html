@@ -95,12 +95,34 @@
         <h2>Your Score</h2>
         <p class="scores">Correct: <span id="correct">0</span></p>
         <p class="scores">Wrong: <span id="wrong">0</span></p>
-        <!-- Allow user to restart the quiz -->
-        <div>
-          <button type="button" id="restart" class="hidden" onclick="restart()">
-            Restart Quiz
-          </button>
-        </div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <div id="lboard" class="box hidden">
+      <!-- Leaderboard explanation -->
+      <div>
+        <h2>Leaderboard</h2>
+        <p>Compare your score with other users looking below.</p>
+        <p>
+          You can search for your username using the search box below. All
+          usernames are case sensitive, please remember that when searching.
+        </p>
+        <label for="user">Username</label> <input type="search" id="search" />
+        <!-- Submit button for the user to search -->
+        <button type="button" onclick="search()">Search</button>
+      </div>
+
+      <!-- Actual leaderboard -->
+      <div id="leaderboard">
+        <!-- JS Code to insert leaderbaord -->
+      </div>
+
+      <!-- Allow user to restart the quiz -->
+      <div>
+        <button type="button" id="restart" class="hidden" onclick="restart()">
+          Restart Quiz
+        </button>
       </div>
     </div>
 
