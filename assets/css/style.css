@@ -124,6 +124,16 @@ button:hover {
   border-color: var(--secondary-color);
 }
 
+.answer {
+  margin: 2% 0.5%;
+  padding: 6px;
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--quartary-color);
+}
+
 /* Create a bottom margin from question paragraph */
 #question {
   margin-bottom: 2%;

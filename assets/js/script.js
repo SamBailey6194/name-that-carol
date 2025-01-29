@@ -180,19 +180,14 @@ function showCurrentQuestion() {
   optionsContainerElement.innerHTML = "";
 
   currentQuestion.options.forEach((option, index) => {
-    let radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "answer";
-    radio.id = "answer" + index;
-    radio.value = option;
+    let button = document.createElement("input");
+    button.type = "button";
+    button.name = "answer";
+    button.id = "answer" + index;
+    button.value = option;
+    button.classList.add("answer")
 
-    let label = document.createElement("label");
-    label.htmlFor = "answer" + index;
-    label.innerText = option;
-
-    optionsContainerElement.appendChild(radio);
-    optionsContainerElement.appendChild(label);
-    optionsContainerElement.appendChild(document.createElement("br"));
+    optionsContainerElement.appendChild(button);
   });
 }
 
