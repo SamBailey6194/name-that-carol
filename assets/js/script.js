@@ -116,10 +116,10 @@ function reveal(divName) {
   document.getElementById("createuser").classList.add("hidden");
   document.getElementById("guide").classList.add("hidden");
   document.getElementById("quiz").classList.add("hidden");
-  document.getElementById("restart").classList.add("hidden");
+  document.getElementById("lboard").classList.add("hidden");
 
 
-  if (divName == "quiz") {
+  if (divName === "quiz") {
     showCurrentQuestion();
     document.getElementById("quiz-area").classList.remove("hidden");
   }
@@ -144,9 +144,9 @@ function shuffle(array) {
 /**
  * Reveal questions in random order
  */
-var currentQuestionIndex = 0;
-var answersCorrect = 0;
-var answersWrong = 0;
+let currentQuestionIndex = 0;
+let answersCorrect = 0;
+let answersWrong = 0;
 
 function reset() {
   currentQuestionIndex = 0;
@@ -236,5 +236,5 @@ function updateScoreDisplay() {
  */
 function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
-  document.getElementById("restart").classList.remove("hidden");
+  document.getElementById("lboard").classList.remove("hidden");
 }
