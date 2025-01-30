@@ -166,7 +166,7 @@ function moveToNextQuestion() {
     showResult();
   }
 
-  document.getElementById("submitanswer").classList.remove("hidden");
+  // document.getElementById("submitanswer").classList.remove("hidden");
 }
 
 function showCurrentQuestion() {
@@ -262,7 +262,7 @@ function selectAnswer(e) {
 
   document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
-  document.getElementById("submitanswer").classList.add("hidden");
+  // document.getElementById("submitanswer").classList.add("hidden");
 
   updateScoreDisplay();
 }
