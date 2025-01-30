@@ -205,8 +205,7 @@ function showCurrentQuestion() {
     button.name = "answer";
     button.id = "answer" + index;
     // button.value = option;
-    button.classList.add("answer");
-    button.classList.add("btn");
+    button.classList.add("answer", "btn", "col-12", "col-sm-6", "col-md-4");
 
     optionsContainerElement.appendChild(button);
 
