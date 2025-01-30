@@ -68,6 +68,72 @@ const quizData = [
     ],
     answer: "O Come, O Come Emmanuel",
   },
+  {
+    question:
+      "It is time to ask, are you hanging up a stocking on your wall? Because everybody is having fun look to the future now, its only just begun. Are you waiting for the family to arrive? Well maybe not this year. But we are hoping the snow will start to fall. Especially as ITS CHRISTMAS!!!",
+    options: [
+      "Merry Xmas Everybody",
+      "Santa Claus is coming to Town",
+      "Baby it's cold outside",
+      "Do you hear what I hear?",
+    ],
+    answer: "Merry Xmas Everybody",
+  },
+  {
+    question:
+      "Christmas is a great time of year and it would be great if Christmas happened each day. Especially when the snowman brings the snow and that he puts a great big smile on somebodys face. The smile will lead to the kids starting to sing and the band begins to play. So let the bells ring out for Christmas.",
+    options: [
+      "Walking in the Air",
+      "I Wish it could Be Christmas Everyday",
+      "Mistletoe and Wine",
+      "Step into Christmas",
+    ],
+    answer: "I Wish it could Be Christmas Everyday",
+  },
+  {
+    question:
+      "Can not wait to see those faces. Cos it has been so long. Just trying to pass the time away. As it is gonna take some time, but I will get there. Even though there are red lights all around. I take a look at the person next to me, and he is just the same. I have a thousand memories of you to help me get by.",
+    options: [
+      "Driving Home for Christmas",
+      "Happy Xmas (War is Over)",
+      "Stay Another Day",
+      "Rudolph the Rednose Reindeer",
+    ],
+    answer: "Driving Home for Christmas",
+  },
+  {
+    question:
+      "There was a dusty road, but we gotta keep plodding along as we have a precious load. Through a winters night we aren't going to give up, Bethlehem is in sight. Ring out the bells, follow that star. We had a heavy day, but the journey's end is near, the star is guiding us, heaven is shining clear.",
+    options: [
+      "Little Donkey",
+      "O Little Town of Bethlehem",
+      "Once in Royal David's City",
+      "Little Drummer Boy",
+    ],
+    answer: "Little Donkey",
+  },
+  {
+    question:
+      "We come bearing gifts and have traveled so far, following yonder star. Born a King on Bethlehem plain, gold I bring to crown Him again, over us all to reign. Frankincense I have to offer, incense is owed to a Deity high, we shall worship Him, God on high.",
+    options: [
+      "We Three Kings",
+      "Good King Wenceslas",
+      "For Unto Us a Child is Born",
+      "In the Bleak Midwinter",
+    ],
+    answer: "We Three Kings",
+  },
+  {
+    question:
+      "The Lord has come, so let Earth receive her King. Every heart must prepare Him room, while heaven and nature sing. The saviour reigns. Mortal songs employ, while the fields and floods, rocks, hills and plains, repeat the sounding joy.",
+    options: [
+      "Joy to the World",
+      "O Little Town of Bethlehem",
+      "While Shepherd's Watched",
+      "Silent Night",
+    ],
+    answer: "Joy to the World",
+  },
 ];
 
 /**
@@ -153,6 +219,8 @@ function reset() {
   answersWrong = 0;
   updateScoreDisplay();
   shuffle(quizData);
+  document.getElementById("next").classList.add("hidden");
+  document.getElementById("reveal").classList.add("hidden");
 }
 
 function moveToNextQuestion() {
