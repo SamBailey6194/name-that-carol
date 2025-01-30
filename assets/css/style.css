@@ -49,7 +49,7 @@ h6 {
 /* Setting box styling */
 .box {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 80%;
   margin-top: 1%;
   margin-left: auto;
@@ -134,8 +134,22 @@ button:hover {
   color: var(--quartary-color);
 }
 
-.answer:hover, .answer:active, .answer:focus {
+.answer:hover,
+.answer:active,
+.answer:focus {
   background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.correct {
+  background-color: green;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.wrong {
+  background-color: red;
   color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
@@ -171,7 +185,8 @@ button:hover {
   }
 
   /* Button being as big as the other text */
-  button, .answer {
+  button,
+  .answer {
     font-size: 20px;
   }
 
@@ -191,7 +206,8 @@ button:hover {
   }
 
   /* Button being as big as the other text */
-  button, .answer {
+  button,
+  .answer {
     font-size: 25px;
   }
 
@@ -211,13 +227,14 @@ button:hover {
     padding-right: 20%;
   }
 
-   /* Make body text bigger and more readable */
-   body {
+  /* Make body text bigger and more readable */
+  body {
     font-size: 35px;
   }
 
   /* Button being as big as the other text */
-  button, .answer {
+  button,
+  .answer {
     font-size: 35px;
   }
 

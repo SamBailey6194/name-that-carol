@@ -161,6 +161,8 @@ function moveToNextQuestion() {
 
   if (currentQuestionIndex < quizData.length) {
     showCurrentQuestion();
+    document.getElementById("next").classList.add("hidden");
+    document.getElementById("reveal").classList.add("hidden");
   } else {
     showResult();
   }
@@ -200,7 +202,7 @@ function selectAnswer() {
   let userAnswer = document.querySelector('input[name="answer"]');
 
   // Stops user from continuing quiz until answer is given
-  if (userAnswer == null) {
+  if (userAnswer === null) {
     alert("Please select an answer");
     // Exits function to stop score from updating
     return;
@@ -221,9 +223,27 @@ function selectAnswer() {
     answersWrong++;
   }
 
+  // revealAnswer()
+
+  document.getElementById("next").classList.remove("hidden");
+
   updateScoreDisplay();
-  moveToNextQuestion();
 }
+
+/*function revealAnswer() {
+  let actualAnswer = quizData[currentQuestionIndex].answer;
+  let chosenAnswer = document.querySelector('input[name="answer"]');
+
+  if (chosenAnswer === actualAnswer) {
+    actualAnswer.style.backgroundColor = "green";
+    actualAnswer.style.font = "white";
+  } else {
+    actualAnswer.style.backgroundColor = "green";
+    actualAnswer.style.font = "white";
+    chosenAnswer.style.backgroundColor = "red";
+    chosenAnswer.style.font = "white";
+  }
+}*/
 
 /**
  * Redisplay the score

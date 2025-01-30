@@ -94,9 +94,13 @@
         <!-- Submit button for the answer the user has selected -->
         <button onclick="selectAnswer()">Submit Answer</button>
         
+        <!-- Reveals a message to tell the user if they got it correct -->
         <div>
           <p id="reveal"></p>
         </div>
+
+        <!-- Next Question Button for the user to decide when to move on -->
+        <button id="next" class="hidden" onclick="moveToNextQuestion()">Next Question</button>
       </div>
 
       <!-- Score section to show the user how many they have correct and wrong -->
