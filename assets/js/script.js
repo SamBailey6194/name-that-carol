@@ -257,29 +257,37 @@ function selectAnswer(e) {
     answersWrong++;
   }
 
-  // revealAnswer()
-
   document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
   // document.getElementById("submitanswer").classList.add("hidden");
 
   updateScoreDisplay();
+
+  // Stop user from submitting answer again
+  let button = document.getElementsByClassName("answer");
+  for (var i = 0; i < button.length; i++) {
+    button[i].disabled = true;
+  }
+
+  //stops user from submitting answers
 }
 
-/*function revealAnswer() {
+/* function revealAnswer() {
   let actualAnswer = quizData[currentQuestionIndex].answer;
-  let chosenAnswer = document.querySelector('input[name="answer"]');
+  // let chosenAnswer = e.target;
+
+  actualAnswer.style.backgroundColor = "green";
+  actualAnswer.style.font = "white";
 
   if (chosenAnswer === actualAnswer) {
-    actualAnswer.style.backgroundColor = "green";
-    actualAnswer.style.font = "white";
+    
   } else {
     actualAnswer.style.backgroundColor = "green";
     actualAnswer.style.font = "white";
     chosenAnswer.style.backgroundColor = "red";
     chosenAnswer.style.font = "white";
   }
-}*/
+} */
 
 /**
  * Redisplay the score
