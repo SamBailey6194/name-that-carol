@@ -199,15 +199,7 @@ function showCurrentQuestion() {
  */
 function selectAnswer(e) {
   const correctAnswer = quizData[currentQuestionIndex].answer;
-  // let userAnswer = document.querySelector('input[name="answer"]:checked');
   const userAnswer = e.target;
-
-  // Stops user from continuing quiz until answer is given
-  /* if (userAnswer === null) {
-    alert("Please select an answer");
-    // Exits function to stop score from updating
-    return;
-  } */
 
   // Checks answer and updates score
   if (userAnswer.innerText === correctAnswer) {
