@@ -225,6 +225,7 @@ function selectAnswer() {
 
   // revealAnswer()
 
+  document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
 
   updateScoreDisplay();
