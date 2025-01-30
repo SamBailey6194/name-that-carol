@@ -185,7 +185,8 @@ function showCurrentQuestion() {
     button.name = "answer";
     button.id = "answer" + index;
     button.value = option;
-    button.classList.add("answer")
+    button.classList.add("answer");
+    button.classList.add("btn");
 
     optionsContainerElement.appendChild(button);
   });
@@ -196,7 +197,7 @@ function showCurrentQuestion() {
  */
 function selectAnswer() {
   let correctAnswer = quizData[currentQuestionIndex].answer;
-  let userAnswer = document.querySelector('input[name="answer"]:checked');
+  let userAnswer = document.querySelector('input[name="answer"]');
 
   // Stops user from continuing quiz until answer is given
   if (userAnswer == null) {
@@ -207,10 +208,16 @@ function selectAnswer() {
 
   // Checks answer and updates score
   if (userAnswer.value === correctAnswer) {
-    alert("Well done! You got it right!");
+    // display a message to tell the user they got it correct
+      document.getElementById(
+        "reveal"
+      ).textContent = "Well done! You got it right!";
     answersCorrect++;
   } else {
-    alert(`Unlucky you got it wrong. The answer was ${correctAnswer}`);
+    // display a message to tell the they got it wrong and reveals correct answer
+    document.getElementById(
+      "reveal"
+    ).textContent = `Unlucky you got it wrong. The answer was ${correctAnswer}`;
     answersWrong++;
   }
 

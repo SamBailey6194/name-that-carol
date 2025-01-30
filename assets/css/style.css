@@ -134,6 +134,12 @@ button:hover {
   color: var(--quartary-color);
 }
 
+.answer:hover, .answer:active, .answer:focus {
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
 /* Create a bottom margin from question paragraph */
 #question {
   margin-bottom: 2%;
@@ -165,7 +171,7 @@ button:hover {
   }
 
   /* Button being as big as the other text */
-  button {
+  button, .answer {
     font-size: 20px;
   }
 
@@ -185,7 +191,7 @@ button:hover {
   }
 
   /* Button being as big as the other text */
-  button {
+  button, .answer {
     font-size: 25px;
   }
 
@@ -211,7 +217,7 @@ button:hover {
   }
 
   /* Button being as big as the other text */
-  button {
+  button, .answer {
     font-size: 35px;
   }
 
