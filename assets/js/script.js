@@ -165,8 +165,6 @@ function moveToNextQuestion() {
   } else {
     showResult();
   }
-
-  // document.getElementById("submitanswer").classList.remove("hidden");
 }
 
 function showCurrentQuestion() {
@@ -183,28 +181,11 @@ function showCurrentQuestion() {
   optionsContainerElement.innerHTML = "";
 
   currentQuestion.options.forEach((option, index) => {
-    /*let radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "answer";
-    radio.id = "answer" + index;
-    radio.value = option;
-    radio.classList.add("answer");
-    radio.classList.add("btn");
-
-    let label = document.createElement("label");
-    label.htmlFor = "answer" + index;
-    label.innerText = option;
-
-    optionsContainerElement.appendChild(radio);
-    optionsContainerElement.appendChild(label);
-    optionsContainerElement.appendChild(document.createElement("br"));*/
-
     let button = document.createElement("button");
     button.innerText = option;
     button.type = "button";
     button.name = "answer";
     button.id = "answer" + index;
-    // button.value = option;
     button.classList.add("answer", "btn", "col-12", "col-sm-6", "col-md-4");
 
     optionsContainerElement.appendChild(button);
@@ -222,26 +203,11 @@ function selectAnswer(e) {
   const userAnswer = e.target;
 
   // Stops user from continuing quiz until answer is given
-  if (userAnswer === null) {
+  /* if (userAnswer === null) {
     alert("Please select an answer");
     // Exits function to stop score from updating
     return;
-  }
-
-  // Checks answer and updates score
-  /*if (userAnswer.value === correctAnswer) {
-    // display a message to tell the user they got it correct
-      document.getElementById(
-        "reveal"
-      ).textContent = "Well done! You got it right!";
-    answersCorrect++;
-  } else {
-    // display a message to tell the they got it wrong and reveals correct answer
-    document.getElementById(
-      "reveal"
-    ).textContent = `Unlucky you got it wrong. The answer was ${correctAnswer}`;
-    answersWrong++;
-  }*/
+  } */
 
   // Checks answer and updates score
   if (userAnswer.innerText === correctAnswer) {
@@ -259,7 +225,6 @@ function selectAnswer(e) {
 
   document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
-  // document.getElementById("submitanswer").classList.add("hidden");
 
   updateScoreDisplay();
 
@@ -268,8 +233,6 @@ function selectAnswer(e) {
   for (var i = 0; i < button.length; i++) {
     button[i].disabled = true;
   }
-
-  //stops user from submitting answers
 }
 
 /* function revealAnswer() {
