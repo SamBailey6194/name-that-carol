@@ -142,7 +142,7 @@ button:hover {
   border-color: var(--secondary-color);
 }
 
-.correct {
+/*.correct {
   background-color: green;
   color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -152,7 +152,7 @@ button:hover {
   background-color: red;
   color: var(--secondary-color);
   border-color: var(--secondary-color);
-}
+}*/
 
 /* Create a bottom margin from question paragraph */
 #question {

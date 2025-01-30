@@ -118,7 +118,6 @@ function reveal(divName) {
   document.getElementById("quiz").classList.add("hidden");
   document.getElementById("lboard").classList.add("hidden");
 
-
   if (divName === "quiz") {
     showCurrentQuestion();
     document.getElementById("quiz-area").classList.remove("hidden");
@@ -166,6 +165,8 @@ function moveToNextQuestion() {
   } else {
     showResult();
   }
+
+  document.getElementById("submitanswer").classList.remove("hidden");
 }
 
 function showCurrentQuestion() {
@@ -182,24 +183,44 @@ function showCurrentQuestion() {
   optionsContainerElement.innerHTML = "";
 
   currentQuestion.options.forEach((option, index) => {
-    let button = document.createElement("input");
+    /*let radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "answer";
+    radio.id = "answer" + index;
+    radio.value = option;
+    radio.classList.add("answer");
+    radio.classList.add("btn");
+
+    let label = document.createElement("label");
+    label.htmlFor = "answer" + index;
+    label.innerText = option;
+
+    optionsContainerElement.appendChild(radio);
+    optionsContainerElement.appendChild(label);
+    optionsContainerElement.appendChild(document.createElement("br"));*/
+
+    let button = document.createElement("button");
+    button.innerText = option;
     button.type = "button";
     button.name = "answer";
     button.id = "answer" + index;
-    button.value = option;
+    // button.value = option;
     button.classList.add("answer");
     button.classList.add("btn");
 
     optionsContainerElement.appendChild(button);
+
+    button.addEventListener("click", selectAnswer);
   });
 }
 
 /**
  * Checks answer user gives to the correct answer
  */
-function selectAnswer() {
-  let correctAnswer = quizData[currentQuestionIndex].answer;
-  let userAnswer = document.querySelector('input[name="answer"]');
+function selectAnswer(e) {
+  const correctAnswer = quizData[currentQuestionIndex].answer;
+  // let userAnswer = document.querySelector('input[name="answer"]:checked');
+  const userAnswer = e.target;
 
   // Stops user from continuing quiz until answer is given
   if (userAnswer === null) {
@@ -209,11 +230,25 @@ function selectAnswer() {
   }
 
   // Checks answer and updates score
-  if (userAnswer.value === correctAnswer) {
+  /*if (userAnswer.value === correctAnswer) {
     // display a message to tell the user they got it correct
       document.getElementById(
         "reveal"
       ).textContent = "Well done! You got it right!";
+    answersCorrect++;
+  } else {
+    // display a message to tell the they got it wrong and reveals correct answer
+    document.getElementById(
+      "reveal"
+    ).textContent = `Unlucky you got it wrong. The answer was ${correctAnswer}`;
+    answersWrong++;
+  }*/
+
+  // Checks answer and updates score
+  if (userAnswer.innerText === correctAnswer) {
+    // display a message to tell the user they got it correct
+    document.getElementById("reveal").textContent =
+      "Well done! You got it right!";
     answersCorrect++;
   } else {
     // display a message to tell the they got it wrong and reveals correct answer
@@ -227,6 +262,7 @@ function selectAnswer() {
 
   document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
+  document.getElementById("submitanswer").classList.add("hidden");
 
   updateScoreDisplay();
 }
