@@ -436,13 +436,16 @@ function moveToNextQuestion() {
   currentQuestionIndex++;
 
   // Sets quiz length to be a m aximum of 10 questions
-  if (currentQuestionIndex < quizData.length && currentQuestionIndex < maxQuestions) {
-      showCurrentQuestion();
-      document.getElementById("next").classList.add("hidden");
-      document.getElementById("reveal").classList.add("hidden");
-    } else {
-      showResult();
-    }
+  if (
+    currentQuestionIndex < quizData.length &&
+    currentQuestionIndex < maxQuestions
+  ) {
+    showCurrentQuestion();
+    document.getElementById("next").classList.add("hidden");
+    document.getElementById("reveal").classList.add("hidden");
+  } else {
+    showResult();
+  }
 }
 
 /**
@@ -450,7 +453,9 @@ function moveToNextQuestion() {
  */
 function showCurrentQuestion() {
   // Increase question number we are on
-  document.getElementById("questionno").innerText = `${currentQuestionIndex + 1} / ${maxQuestions}`;
+  document.getElementById("questionno").innerText = `${
+    currentQuestionIndex + 1
+  } / ${maxQuestions}`;
 
   // Reveal random question
   const currentQuestion = quizData[currentQuestionIndex];
@@ -537,9 +542,8 @@ function showResult() {
  * Generates leaderboard from local storage
  */
 /* function leaderboard() {
-  let userScore = localStorage.getItem("score");
-  let user = localStorage.getItem("username");
-  let list = document.getElementById("leaderboard");
-
-
+  const user = localStorage.getItem("username");
+  const userScore = localStorage.getItem("score");
+  const list = document.getElementById("leaderboard");
+  const scoreboard = JSON.stringify({user, userScore});
 }*/
