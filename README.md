@@ -2,17 +2,33 @@
 
 **Name That Carol** The aim of the website is to provide users with a way to test their knowledge of Christmas Songs in a fun and engaging way that encourages them to invite their friends to see if they can beat their score.
 
+## User Stories & Wireframes
+
+### User Stories
+
 The decision to make this website is due to the user stories found [here](userstory.md).
+
+### Wireframes
 
 From the user stories you can see the wireframes that were mocked up below.
 
+#### Home Page
+
 ![Home Wireframe](assets/readmeimgs/home_loginpage.png)
+
+#### Account Creation/Management
 
 ![Account Wireframe](assets/readmeimgs/createaccount.png)
 
+#### Question Page
+
 ![Question Page Wireframe](assets/readmeimgs/questionpage.png)
 
+#### Leaderboard
+
 ![Leaderboard Wireframe](assets/readmeimgs/leaderboard.png)
+
+## Responsive Design
 
 ![Responsive Mockup](assets/readmeimgs/amiresponsive.png)
 
