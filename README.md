@@ -4,7 +4,17 @@
 
 The decision to make this website is due to the user stories found [here](userstory.md).
 
-![Responsive Mockup](assets\readmeimgs\amiresponsive.png)
+From the user stories you can see the wireframes that were mocked up below.
+
+![Home Wireframe](assets/readmeimgs/home_loginpage.png)
+
+![Account Wireframe](assets/readmeimgs/createaccount.png)
+
+![Question Page Wireframe](assets/readmeimgs/questionpage.png)
+
+![Leaderboard Wireframe](assets/readmeimgs/leaderboard.png)
+
+![Responsive Mockup](assets/readmeimgs/amiresponsive.png)
 
 ## Features 
 
@@ -18,11 +28,11 @@ Below are the features for the website and at the end is listed any features tha
   - Once created it shows a message that they have created a username and it has been saved and the guide and quiz buttons appear
   - If the user is revisiting the site they are welcomed back and can go to the guide or the quiz
     
-  ![UsernameCreation](assets\readmeimgs\usernamecreation.png)
+  ![UsernameCreation](assets/readmeimgs/usernamecreation.png)
 
-  ![UsernameCreated](assets\readmeimgs\usernamecreatedmessage.png)
+  ![UsernameCreated](assets/readmeimgs/usernamecreatedmessage.png)
 
-  ![UserReturns](assets\readmeimgs\userreturns.png)
+  ![UserReturns](assets/readmeimgs/userreturns.png)
 
 #### Guide
 
@@ -31,7 +41,7 @@ Below are the features for the website and at the end is listed any features tha
     - If they accessed the guide from the username creation when they click the go to quiz button it starts them from question 1
     - If they accessed the guide from the quiz area when they click go to quiz button they join the quiz from where they left off
     
-  ![Guide](assets\readmeimgs\guidetoquiz.png)
+  ![Guide](assets/readmeimgs/guidetoquiz.png)
 
 #### Quiz
 
@@ -44,14 +54,14 @@ Below are the features for the website and at the end is listed any features tha
   - For each question the order of the options are randomised as well
   - The randomisation enables for users to redo the quiz and have to read through the questions and options carefully rather than remembering where to click
     
-  ![Quiz](assets\readmeimgs\quizsection.png)
+  ![Quiz](assets/readmeimgs/quizsection.png)
 
 #### Quiz Finished
 
   - Here the user can see their score in terms of how many they got correct and how many wrong
   - There is also a button that allows them to restart the quiz if they so wish
     
-  ![EndofQuiz](assets\readmeimgs\quizfinished.png)
+  ![EndofQuiz](assets/readmeimgs/quizfinished.png)
 
 ### Features Left to Implement
 
@@ -112,27 +122,27 @@ The website has been tested; including internal (buttons and navbar) & external 
 
   - Homepage
 
-  ![Lighthouse - Homepage](assets\readmeimgs\lighthousescore.png)
+  ![Lighthouse - Homepage](assets/readmeimgs/lighthousescore.png)
 
 - HTML
   - No errors were returned when passing through the official W3C Validator, see images below for each page.
 
     - Homepage
       
-    ![W3C validator](assets\readmeimgs\htmlvalidator.png)
+    ![W3C validator](assets/readmeimgs/htmlvalidator.png)
     
 
 - CSS
   - Put CSS through Autoprefixer to ensure it works on all browsers
   - No errors were found when passing through the official Jigsaw validator, see links below.
   
-   ![Jigsaw validator](assets\readmeimgs\cssvalidator.png)
+   ![Jigsaw validator](assets/readmeimgs/cssvalidator.png)
 
 - JavaScript
   - Warnings produced were to do with browser compatibility
   - The two unused functions mentioned are used via onclick in HTML
 
-  ![JSHint validator](assets\readmeimgs\jsvalidator.png)
+  ![JSHint validator](assets/readmeimgs/jsvalidator.png)
 
 ## Deployment
 
