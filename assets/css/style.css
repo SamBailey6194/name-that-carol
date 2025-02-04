@@ -236,6 +236,13 @@ button:hover {
     font-size: 35px;
   }
 
+  /* Making Username Box bigger */
+  #username,
+  #search {
+    height: 40px;
+    font-size: 35px;
+  }
+
   /* Header font-size */
   h1,
   h2,

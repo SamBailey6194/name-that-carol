@@ -530,18 +530,16 @@ function updateScoreDisplay() {
 function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
-}
-
-/**
- * Stores the score
- */
-function highScore() {
-
+  localStorage.setItem("score", answersCorrect);
 }
 
 /**
  * Generates leaderboard from local storage
  */
-function leaderboard() {
+/* function leaderboard() {
+  let userScore = localStorage.getItem("score");
+  let user = localStorage.getItem("username");
+  let list = document.getElementById("leaderboard");
 
-}
+
+}*/
