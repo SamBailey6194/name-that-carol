@@ -1,5 +1,6 @@
 /**
  * Questions, options and answered stored here
+ * There are 30 questions
  */
 const quizData = [
   {
@@ -431,18 +432,16 @@ function reset() {
  */
 function moveToNextQuestion() {
   currentQuestionIndex++;
+  const maxQuestions = 10;
 
-  // Sets quiz length to be maximum all the questions
-  if (currentQuestionIndex < quizData.length) {
-    // Sets quiz length to run to 6 questions
-    if (currentQuestionIndex < 6) {
+  // Sets quiz length to be a m aximum of 10 questions
+  if (currentQuestionIndex < quizData.length && currentQuestionIndex < maxQuestions) {
       showCurrentQuestion();
       document.getElementById("next").classList.add("hidden");
       document.getElementById("reveal").classList.add("hidden");
     } else {
       showResult();
     }
-  }
 }
 
 /**
