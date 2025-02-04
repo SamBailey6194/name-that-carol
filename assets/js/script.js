@@ -414,6 +414,7 @@ function shuffle(array) {
 let currentQuestionIndex = 0;
 let answersCorrect = 0;
 let answersWrong = 0;
+const maxQuestions = 10;
 
 /**
  * Resets the quiz when necessary
@@ -433,7 +434,6 @@ function reset() {
  */
 function moveToNextQuestion() {
   currentQuestionIndex++;
-  const maxQuestions = 10;
 
   // Sets quiz length to be a m aximum of 10 questions
   if (currentQuestionIndex < quizData.length && currentQuestionIndex < maxQuestions) {
@@ -450,7 +450,7 @@ function moveToNextQuestion() {
  */
 function showCurrentQuestion() {
   // Increase question number we are on
-  document.getElementById("questionno").innerText = currentQuestionIndex + 1;
+  document.getElementById("questionno").innerText = `${currentQuestionIndex + 1} / ${maxQuestions}`;
 
   // Reveal random question
   const currentQuestion = quizData[currentQuestionIndex];
@@ -530,4 +530,18 @@ function updateScoreDisplay() {
 function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
+}
+
+/**
+ * Stores the score
+ */
+function highScore() {
+
+}
+
+/**
+ * Generates leaderboard from local storage
+ */
+function leaderboard() {
+
 }
