@@ -192,12 +192,16 @@ function reveal(divName) {
   document.getElementById(divName).classList.remove("hidden");
 }
 
+/**
+ * Allows restart quiz button to restart the quiz when clicked and user
+ * can do the quiz again
+ */
 function restart() {
   reset();
   reveal("quiz");
 }
 
-// Fisher-Yates Algorithim to help randomize order of questions
+// Fisher-Yates Algorithim to help randomize order of questions and options
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const random = Math.floor(Math.random() * (i + 1));
@@ -206,13 +210,14 @@ function shuffle(array) {
   }
 }
 
-/**
- * Reveal questions in random order
- */
+// Global variables for question and answer functions
 let currentQuestionIndex = 0;
 let answersCorrect = 0;
 let answersWrong = 0;
 
+/**
+ * Resets the quiz when necessary
+ */
 function reset() {
   currentQuestionIndex = 0;
   answersCorrect = 0;
@@ -223,6 +228,9 @@ function reset() {
   document.getElementById("reveal").classList.add("hidden");
 }
 
+/**
+ * Function enabling user to move onto the next question
+ */
 function moveToNextQuestion() {
   currentQuestionIndex++;
 
@@ -235,6 +243,9 @@ function moveToNextQuestion() {
   }
 }
 
+/**
+ * Function that shows the question and options
+ */
 function showCurrentQuestion() {
   // Increase question number we are on
   document.getElementById("questionno").innerText = currentQuestionIndex + 1;
@@ -289,7 +300,7 @@ function selectAnswer(e) {
   updateScoreDisplay();
 
   // Stop user from submitting answer again
-  stopAnswers()
+  stopAnswers();
 }
 
 /**
@@ -301,10 +312,6 @@ function stopAnswers() {
   for (var i = 0; i < button.length; i++) {
     button[i].disabled = true;
   }
-}
-
-function revealAnswer() {
-  
 }
 
 /**

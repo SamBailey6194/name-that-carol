@@ -41,7 +41,7 @@ h6 {
   font-family: var(--primary-font);
   color: var(--secondary-color);
   text-align: center;
-  font-size: 20px;
+  font-size: 100%;
   padding: 7px 0;
   margin-top: 0;
 }
@@ -142,18 +142,6 @@ button:hover {
   border-color: var(--secondary-color);
 }
 
-/*.correct {
-  background-color: green;
-  color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-
-.wrong {
-  background-color: red;
-  color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}*/
-
 /* Create a bottom margin from question paragraph */
 #question {
   margin-bottom: 2%;
@@ -175,7 +163,7 @@ button:hover {
   h4,
   h5,
   h6 {
-    font-size: 35px;
+    font-size: 115%;
   }
 
   /* Space out scores better on tablets */
@@ -203,6 +191,16 @@ button:hover {
   /* Make body text bigger and more readable */
   body {
     font-size: 25px;
+  }
+
+  /* Header font-size */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 130%;
   }
 
   /* Button being as big as the other text */
@@ -245,6 +243,6 @@ button:hover {
   h4,
   h5,
   h6 {
-    font-size: 50px;
+    font-size: 150%;
   }
 }
