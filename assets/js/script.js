@@ -234,13 +234,17 @@ function reset() {
 function moveToNextQuestion() {
   currentQuestionIndex++;
 
+  // Sets quiz length to be maximum all the questions
   if (currentQuestionIndex < quizData.length) {
+    // Sets quiz length to run to 6 questions
+    if (currentQuestionIndex < 6) {
     showCurrentQuestion();
     document.getElementById("next").classList.add("hidden");
     document.getElementById("reveal").classList.add("hidden");
   } else {
     showResult();
   }
+}
 }
 
 /**
