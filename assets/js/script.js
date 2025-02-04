@@ -383,6 +383,7 @@ function reveal(divName) {
   document.getElementById("quiz").classList.add("hidden");
   document.getElementById("lboard").classList.add("hidden");
 
+  // Enables restart function to work
   if (divName === "quiz") {
     showCurrentQuestion();
     document.getElementById("quiz-area").classList.remove("hidden");
