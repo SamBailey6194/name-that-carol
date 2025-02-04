@@ -510,7 +510,7 @@ function selectAnswer(e) {
 function stopAnswers() {
   // Stop user from submitting answer again
   let button = document.getElementsByClassName("answer");
-  for (var i = 0; i < button.length; i++) {
+  for (let i = 0; i < button.length; i++) {
     button[i].disabled = true;
   }
 }
