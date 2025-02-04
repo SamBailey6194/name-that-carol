@@ -240,16 +240,16 @@ function showCurrentQuestion() {
   document.getElementById("questionno").innerText = currentQuestionIndex + 1;
 
   // Reveal random question
-  let currentQuestion = quizData[currentQuestionIndex];
+  const currentQuestion = quizData[currentQuestionIndex];
   document.getElementById("question").innerText = currentQuestion.question;
 
   // Reveal random options
   shuffle(currentQuestion.options);
-  let optionsContainerElement = document.getElementById("options");
+  const optionsContainerElement = document.getElementById("options");
   optionsContainerElement.innerHTML = "";
 
   currentQuestion.options.forEach((option, index) => {
-    let button = document.createElement("button");
+    const button = document.createElement("button");
     button.innerText = option;
     button.type = "button";
     button.name = "answer";
@@ -289,28 +289,23 @@ function selectAnswer(e) {
   updateScoreDisplay();
 
   // Stop user from submitting answer again
+  stopAnswers()
+}
+
+/**
+ * Stops user from submiting more answers
+ */
+function stopAnswers() {
+  // Stop user from submitting answer again
   let button = document.getElementsByClassName("answer");
   for (var i = 0; i < button.length; i++) {
     button[i].disabled = true;
   }
 }
 
-/* function revealAnswer() {
-  let actualAnswer = quizData[currentQuestionIndex].answer;
-  // let chosenAnswer = e.target;
-
-  actualAnswer.style.backgroundColor = "green";
-  actualAnswer.style.font = "white";
-
-  if (chosenAnswer === actualAnswer) {
-    
-  } else {
-    actualAnswer.style.backgroundColor = "green";
-    actualAnswer.style.font = "white";
-    chosenAnswer.style.backgroundColor = "red";
-    chosenAnswer.style.font = "white";
-  }
-} */
+function revealAnswer() {
+  
+}
 
 /**
  * Redisplay the score
