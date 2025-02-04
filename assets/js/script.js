@@ -134,6 +134,204 @@ const quizData = [
     ],
     answer: "Joy to the World",
   },
+  {
+    question:
+      "A silent night, a holy night, where all is calm and bright. A virgin mother and child rest peacefully while heavenly hosts sing 'Alleluia'. The dawn of redeeming grace shines upon them.",
+    options: [
+      "Silent Night",
+      "Away in a Manger",
+      "Hark! The Herald Angels Sing",
+      "O Holy Night",
+    ],
+    answer: "Silent Night",
+  },
+  {
+    question:
+      "A beautiful sight, we are happy tonight, walking through a world of white. As we stroll, we will build a frosty friend, asking if he is the marrying type.",
+    options: [
+      "Jingle Bells",
+      "Winter Wonderland",
+      "Let It Snow",
+      "Frosty the Snowman",
+    ],
+    answer: "Winter Wonderland",
+  },
+  {
+    question:
+      "Snow is falling all around, children playing, having fun. It is the season for love and understanding, so let us celebrate together with joy and cheer.",
+    options: [
+      "Merry Christmas Everyone",
+      "I Wish It Could Be Christmas Everyday",
+      "Step Into Christmas",
+      "Last Christmas",
+    ],
+    answer: "Merry Christmas Everyone",
+  },
+  {
+    question:
+      "One foggy night, a reindeer stood apart, mocked for his nose so bright. But when the weather turned dire, he guided the sleigh and became a hero overnight.",
+    options: [
+      "Rudolph the Red-Nosed Reindeer",
+      "Frosty the Snowman",
+      "Jingle Bells",
+      "Santa Claus is Coming to Town",
+    ],
+    answer: "Rudolph the Red-Nosed Reindeer",
+  },
+  {
+    question:
+      "A wish for a joyful season filled with love and light. May your days be cheery and bright, and may all your celebrations be as white as snow.",
+    options: [
+      "White Christmas",
+      "Have Yourself a Merry Little Christmas",
+      "Let It Snow",
+      "Blue Christmas",
+    ],
+    answer: "White Christmas",
+  },
+  {
+    question:
+      "Children sing, as bells ring out, spreading the festive cheer. In a world of wonder, laughter fills the air. It is time to rejoice and step into the holiday spirit.",
+    options: [
+      "Step Into Christmas",
+      "I Wish It Could Be Christmas Everyday",
+      "Merry Christmas Everybody",
+      "Rockin Around the Christmas Tree",
+    ],
+    answer: "Step Into Christmas",
+  },
+  {
+    question:
+      "Amidst the cold, a single night of hope and love. A world weary from sorrow finds solace as divine light breaks through the darkness, filling the night with wonder.",
+    options: [
+      "O Holy Night",
+      "Silent Night",
+      "The First Noel",
+      "It Came Upon the Midnight Clear",
+    ],
+    answer: "O Holy Night",
+  },
+  {
+    question:
+      "Beneath the mistletoe's glow, lips meet for a festive kiss. The fire burns bright, as love fills the air, making the season merry and warm.",
+    options: [
+      "Underneath the Tree",
+      "All I Want for Christmas Is You",
+      "Mistletoe",
+      "Last Christmas",
+    ],
+    answer: "Mistletoe",
+  },
+  {
+    question:
+      "A sleigh ride through the snow, dashing along in an open sleigh. Laughter fills the crisp winter air as bells jingle in a cheerful tune.",
+    options: [
+      "Jingle Bells",
+      "Frosty the Snowman",
+      "Let It Snow",
+      "Sleigh Ride",
+    ],
+    answer: "Jingle Bells",
+  },
+  {
+    question:
+      "Rocking around a festive centerpiece, voices rise in joyful song. The Christmas spirit is in full swing, as the new old-fashioned way takes over.",
+    options: [
+      "Rockin' Around the Christmas Tree",
+      "Jingle Bell Rock",
+      "Step Into Christmas",
+      "Merry Christmas Everybody",
+    ],
+    answer: "Rockin' Around the Christmas Tree",
+  },
+  {
+    question:
+      "The sound of tiny hooves upon the rooftop signals his arrival. With a jolly laugh and a sack full of toys, he's making his list and checking it twice.",
+    options: [
+      "Santa Claus is Coming to Town",
+      "Jingle Bells",
+      "Here Comes Santa Claus",
+      "Frosty the Snowman",
+    ],
+    answer: "Santa Claus is Coming to Town",
+  },
+  {
+    question:
+      "A town bathed in divine light as a wondrous birth takes place. Though the streets are silent, the everlasting light watches over all who dream tonight.",
+    options: [
+      "O Little Town of Bethlehem",
+      "Silent Night",
+      "It Came Upon the Midnight Clear",
+      "The First Noel",
+    ],
+    answer: "O Little Town of Bethlehem",
+  },
+  {
+    question:
+      "A guiding light appears in the night sky, leading shepherds and kings to witness the miracle of a holy birth. The earth rejoices as the good news is shared far and wide.",
+    options: [
+      "The First Noel",
+      "Angels We Have Heard on High",
+      "It Came Upon the Midnight Clear",
+      "O Holy Night",
+    ],
+    answer: "The First Noel",
+  },
+  {
+    question:
+      "A heavenly host appears on high, singing a song of great joy. Echoing through the hills, their voices rise in a jubilant refrain of 'Gloria'.",
+    options: [
+      "Angels We Have Heard on High",
+      "Hark! The Herald Angels Sing",
+      "O Come, All Ye Faithful",
+      "The First Noel",
+    ],
+    answer: "Angels We Have Heard on High",
+  },
+  {
+    question:
+      "A call to all faithful ones, urging them to come with joyful hearts. Born on this holy night, the King of Angels welcomes all to adore Him.",
+    options: [
+      "O Come, All Ye Faithful",
+      "Silent Night",
+      "The First Noel",
+      "It Came Upon the Midnight Clear",
+    ],
+    answer: "O Come, All Ye Faithful",
+  },
+  {
+    question:
+      "A message of peace is carried by the wind, soft and sweet. The world, weary from sorrow, listens as angelic voices bring comfort and light.",
+    options: [
+      "It Came Upon the Midnight Clear",
+      "O Holy Night",
+      "The First Noel",
+      "Silent Night",
+    ],
+    answer: "It Came Upon the Midnight Clear",
+  },
+  {
+    question:
+      "Shepherds in the fields, watching over their flocks by night, receive a glorious vision. An angel of the Lord appears, bringing tidings of great joy that shall be for all people.",
+    options: [
+      "While Shepherds Watched Their Flocks",
+      "The First Noel",
+      "Angels We Have Heard on High",
+      "It Came Upon the Midnight Clear",
+    ],
+    answer: "While Shepherds Watched Their Flocks",
+  },
+  {
+    question:
+      "Bells ring out across the town as voices cheer in celebration. Though the snow may not fall, the spirit of Christmas fills the air, making this a simply wonderful time of the year.",
+    options: [
+      "Wonderful Christmastime",
+      "I Wish It Could Be Christmas Everyday",
+      "Step Into Christmas",
+      "Merry Christmas Everybody",
+    ],
+    answer: "Wonderful Christmastime",
+  },
 ];
 
 /**
@@ -238,13 +436,13 @@ function moveToNextQuestion() {
   if (currentQuestionIndex < quizData.length) {
     // Sets quiz length to run to 6 questions
     if (currentQuestionIndex < 6) {
-    showCurrentQuestion();
-    document.getElementById("next").classList.add("hidden");
-    document.getElementById("reveal").classList.add("hidden");
-  } else {
-    showResult();
+      showCurrentQuestion();
+      document.getElementById("next").classList.add("hidden");
+      document.getElementById("reveal").classList.add("hidden");
+    } else {
+      showResult();
+    }
   }
-}
 }
 
 /**
