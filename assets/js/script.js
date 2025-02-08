@@ -542,7 +542,7 @@ function showResult() {
 /**
  * Checks the highscore
  */
-function checkHighScore(correct) {
+function checkHighScore(score) {
   // Generate the array of the scores in local storage
   // If no scores yet ?? will give a default empty array
   const highScores = JSON.parse(localStorage.getItem("score")) ?? [];
@@ -556,16 +556,13 @@ function checkHighScore(correct) {
  */
 function saveHighScore(score, highScores) {
   const username = localStorage.getItem("username");
-  const newScore = {score, username};
+  const newScore = {username, score};
 
   // Adds to list of high scores
   highScores.push(newScore);
 
   // Sorts the high scores list
   highScores.sort((a, b) => b.score - a.score);
-
-  // Selects the new list
-  highScores.splice(numberHighScores);
 
   // Saves list to local storage
   localStorage.setItem(highestScore, JSON.stringify(highScores));
@@ -583,6 +580,6 @@ function showHighScores() {
 
   // Adding the scores and usernames to the leaderboard
   leaderboard.innerHTML = userScores
-  .map((score) => `<li>${username} = ${score}`)
+  .map((score) => `<li>${username} = ${score}</li>`)
   .join(''); 
 }
