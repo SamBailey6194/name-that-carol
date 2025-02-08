@@ -154,10 +154,11 @@ The website has been tested; including internal (buttons and navbar) & external 
    ![Jigsaw validator](assets/readmeimgs/cssvalidator.png)
 
 - JavaScript
+  - I have set the quiz data to one file and the logic to another file
   - Warnings produced were to do with browser compatibility
   - The two unused functions mentioned are used via onclick in HTML
 
-  ![JSHint validator](assets/readmeimgs/jsvalidator.png)
+  ![JSHint validator - Quiz Data](assets/readmeimgs/jsvalidator.png)
 
 ## Deployment
 
