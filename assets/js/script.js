@@ -1,8 +1,10 @@
-// Global variables for question and answer functions
+// Global variables
 let currentQuestionIndex = 0;
 let answersCorrect = 0;
 let answersWrong = 0;
 const maxQuestions = 10;
+const numberHighscores = 10;
+const highScores = "highscores";
 
 /**
  * Validating username creation
@@ -198,8 +200,7 @@ function updateScoreDisplay() {
 function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
-  localStorage.setItem("score", answersCorrect);
-  checkHighScore(score);
+  JSON.parse(localStorage.setItem("leaderbaord", highScores)) ?? [];
 }
 
 /**
@@ -208,10 +209,13 @@ function showResult() {
 function checkHighScore(score) {
   // Generate the array of the scores in local storage
   // If no scores yet ?? will give a default empty array
-  const highScores = JSON.parse(localStorage.getItem("score")) ?? [];
+  const highScores = JSON.parse(localStorage.getItem("leaderboard")) ?? [];
+  const lowestScore = highScores[numberHighscores - 1]?.score ?? 0;
 
-  saveHighScore(score, highScores);
-  showHighScores();
+  if (score > lowestScore) {
+    saveHighScore(score, highScores);
+    showHighScores();
+  }
 }
 
 /**
@@ -219,7 +223,7 @@ function checkHighScore(score) {
  */
 function saveHighScore(score, highScores) {
   const username = localStorage.getItem("username");
-  const newScore = {username, score};
+  const newScore = { username, score };
 
   // Adds to list of high scores
   highScores.push(newScore);
@@ -228,7 +232,7 @@ function saveHighScore(score, highScores) {
   highScores.sort((a, b) => b.score - a.score);
 
   // Saves list to local storage
-  localStorage.setItem(highestScore, JSON.stringify(highScores));
+  localStorage.setItem("leaderboard", JSON.stringify(highScores));
 }
 
 /**
@@ -239,10 +243,10 @@ function showHighScores() {
   // If no scores yet ?? will give a default empty array
   const userScores = JSON.parse(localStorage.getItem(highestScore)) ?? [];
   // Gets the leaderboard section from HTML
-  const leaderboard = document.getElementById("leaderboard"); 
+  const leaderboard = document.getElementById("leaderboard");
 
   // Adding the scores and usernames to the leaderboard
   leaderboard.innerHTML = userScores
-  .map((score) => `<li>${username} = ${score}</li>`)
-  .join(''); 
+    .map((score) => `<li>${username} = ${score}</li>`)
+    .join("");
 }
