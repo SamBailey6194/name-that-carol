@@ -203,6 +203,7 @@ Below are my credits for where I got inspiration for some of the code, where the
 - Some of the other JS coding concepts has been used from Love Maths as well
 - The username creation code has been inspired by a geekforgeeks article found [here](https://www.geeksforgeeks.org/how-to-create-a-textfield-to-enter-a-username-and-save-it-on-a-website/)
 - Got guidance in how to use fisher-yates algorithim from this video [here](https://www.youtube.com/watch?v=FGAUekwri1Q)
+- Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68)
 
 ### Content 
 
