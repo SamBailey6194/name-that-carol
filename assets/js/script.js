@@ -536,14 +536,53 @@ function showResult() {
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
   localStorage.setItem("score", answersCorrect);
+  checkHighScore();
 }
 
 /**
- * Generates leaderboard from local storage
+ * Checks the highscore
  */
-/* function leaderboard() {
-  const user = localStorage.getItem("username");
-  const userScore = localStorage.getItem("score");
-  const list = document.getElementById("leaderboard");
-  const scoreboard = JSON.stringify({user, userScore});
-}*/
+function checkHighScore(correct) {
+  // Generate the array of the scores in local storage
+  // If no scores yet ?? will give a default empty array
+  const highScores = JSON.parse(localStorage.getItem("score")) ?? [];
+
+  saveHighScore(score, highScores);
+  showHighScores();
+}
+
+/**
+ * Saving highscore
+ */
+function saveHighScore(score, highScores) {
+  const username = localStorage.getItem("username");
+  const newScore = {score, username};
+
+  // Adds to list of high scores
+  highScores.push(newScore);
+
+  // Sorts the high scores list
+  highScores.sort((a, b) => b.score - a.score);
+
+  // Selects the new list
+  highScores.splice(numberHighScores);
+
+  // Saves list to local storage
+  localStorage.setItem(highestScore, JSON.stringify(highScores));
+}
+
+/**
+ * Reveal leaderboard
+ */
+function showHighScores() {
+  // Gets the highest scores array from local storage
+  // If no scores yet ?? will give a default empty array
+  const userScores = JSON.parse(localStorage.getItem(highestScore)) ?? [];
+  // Gets the leaderboard section from HTML
+  const leaderboard = document.getElementById("leaderboard"); 
+
+  // Adding the scores and usernames to the leaderboard
+  leaderboard.innerHTML = userScores
+  .map((score) => `<li>${username} = ${score}`)
+  .join(''); 
+}
