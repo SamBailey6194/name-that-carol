@@ -124,11 +124,10 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Guide Div accessed from Username Creation | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
 | Guide Div accessed from Quiz div | Click Go to Quiz | Hide guide and reveal quiz with the last question the answer was on and the options button below | Pass |
 | Quiz Div | Click Show Guide | Reveal guide | Pass |
-| Quiz Div | Click Submit Answer | If user hasn't selected an answer an alert box appears telling the user to select an answer | Pass |
-| Quiz Div | Click Submit Answer | Submit selected answer and if answer is correct an alert box appears congratulating the user and correct score goes up by 1 | Pass |
-| Quiz Div | Click Submit Answer | Submit selected answer and if answer is wrong an alert box appears telling the user what the correct answer was and wrong score goes up by 1 | Pass |
-| Quiz Div | When final question has been answered | Hide question area and only show the scoreboard with a button Restart Quiz appearing | Pass |
-| Scoreboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
+| Quiz Div | Click Correct Answer | Submit selected answer and if answer is correct a message below appears congratulating the user and correct score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled | Pass |
+| Quiz Div | Click Wrong Answer | Submit selected answer and if answer is wrong a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled  | Pass |
+| Quiz Div | When final question has been answered | Hide question area and only show the scoreboard and leaderboard with a button Restart Quiz appearing | Pass |
+| Leaderboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
 
 
 ### Validator Testing 
