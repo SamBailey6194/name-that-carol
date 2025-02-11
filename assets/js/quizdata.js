@@ -40,7 +40,7 @@ const quizData = [
       question:
         "There was no crib. But little Lord Jesus lay down his head. The stars looked down on Him while he was asleep. The cattle were lowing as He awoke with no crying.",
       options: [
-        "O Come All Ye Faithful",
+        "O Come, All Ye Faithful",
         "We Three Kings",
         "Silent Night",
         "Away in a Manger",
@@ -51,12 +51,12 @@ const quizData = [
       question:
         "The angels sing and give glory to a new born King! There is a lot of joy to be proclaimed for Christ is born in Bethlehem. Christ is adored and is the everlasting Lord. Born so no man may die.",
       options: [
-        "Hark the Herald",
+        "Hark! The Herald Angels Sing",
         "Little Donkey",
         "While Shepherds Watched",
         "Joy to the World",
       ],
-      answer: "Hark the Herald",
+      answer: "Hark! The Herald Angels Sing",
     },
     {
       question:
@@ -197,7 +197,7 @@ const quizData = [
         "Step Into Christmas",
         "I Wish It Could Be Christmas Everyday",
         "Merry Christmas Everybody",
-        "Rockin Around the Christmas Tree",
+        "Rockin' Around the Christmas Tree",
       ],
       answer: "Step Into Christmas",
     },
