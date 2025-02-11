@@ -72,6 +72,10 @@ Below are the features for the website and at the end is listed any features tha
 
 ![Quiz](assets/readmeimgs/quizsection.png)
 
+![Quiz Correct Answer](assets/readmeimgs/quizsectioncorrectanswer.png)
+
+![Quiz Wrong Answer](assets/readmeimgs/quizsectionwronganswer.png)
+
 #### Leaderboard
 
 - Here the user can see their score in terms of how many they got correct and how many wrong
@@ -136,7 +140,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 - Lighthouse Score
 
-  - Below you can see my lighthouse scores tested on Chrome Incognito Mode
+  - Below you can see my lighthouse score tested on Chrome Incognito Mode
 
   - Homepage
 
@@ -161,9 +165,12 @@ The website has been tested; including internal (buttons and navbar) & external 
 
   - I have set the quiz data to one file and the logic to another file
   - Warnings produced were to do with browser compatibility
+  - quizData is defined in the quizdata.js file
   - The two unused functions mentioned are used via onclick in HTML
 
-  ![JSHint validator - Quiz Data](assets/readmeimgs/jsvalidator.png)
+  ![JSHint validator - Quiz Data](assets/readmeimgs/jsquizvalidator.png)
+
+  ![JSHint validator - Logic](assets/readmeimgs/jsvalidator.png)
 
 ## Deployment
 
