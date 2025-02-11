@@ -214,7 +214,7 @@ Below are my credits for where I got inspiration for some of the code, where the
 - Some of the other JS coding concepts has been used from Love Maths as well
 - The username creation code has been inspired by a geekforgeeks article found [here](https://www.geeksforgeeks.org/how-to-create-a-textfield-to-enter-a-username-and-save-it-on-a-website/)
 - Got guidance in how to use fisher-yates algorithim from this video [here](https://www.youtube.com/watch?v=FGAUekwri1Q)
-- Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68) and these two videos; [Saving Scores](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=8), [Showing Scores](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=9)
+- Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68) and these two videos; [Saving Leaderboard](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=8), [Showing Leaderboard](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=9)
 - Some of the CSS styling has been done via bootstrap library
 
 ### Content
