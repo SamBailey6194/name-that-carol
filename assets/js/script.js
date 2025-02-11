@@ -235,6 +235,6 @@ function saveHighScore() {
 function showHighScores() {
   // Adding the scores and usernames to the leaderboard
   document.getElementById("leaderbaord").innerHTML = leaderboard
-    .map((score) => `<li>${score.username} = ${score.score}</li>`)
+    .map((score) => `<li>${score.name} = ${score.score}</li>`)
     .join("");
 }
