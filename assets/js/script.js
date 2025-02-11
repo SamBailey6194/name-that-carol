@@ -252,7 +252,7 @@ function showLeaderboard() {
   document.getElementById("lboard").classList.remove("hidden");
 
   // Displays the leaderboard from local stroage in the ol id=leaderboard in HTML file 
-  document.getElementById("leaderbaord").innerHTML = leaderboard
+  document.getElementById("leaderboard").innerHTML = leaderboard
     .map((score) => `<li>${score.name} = ${score.score}</li>`)
     .join("");
 }

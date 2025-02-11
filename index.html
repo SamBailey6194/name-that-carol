@@ -114,26 +114,28 @@
   <!-- Leaderboard Section -->
   <div id="lboard" class="box hidden">
     <!-- Leaderboard explanation -->
-    <div>
+    <div class="text-center">
       <h2>Leaderboard</h2>
       <p>Compare your score with other users looking below.</p>
     </div>
 
     <!-- Actual leaderboard -->
-    <div>
-      <ol id="leaderbaord">
-        <!-- JS Code to insert leaderbaord -->
-      </ol>
-    </div>
+    <div class="container">
+      <div class="d-flex">
+        <ol id="leaderboard" class="mx-auto justify-content-center text-center">
+          <!-- JS Code to insert leaderbaord -->
+        </ol>
+      </div>
 
-    <!-- Allow user to restart the quiz -->
-    <div>
-      <button type="button" id="restart" onclick="restart()">
-        Restart Quiz
-      </button>
-      <button type="button" id="user-btn" onclick="reveal('createuser')">
-        Create New User
-      </button>
+      <!-- Allow user to restart the quiz -->
+      <div class="row justify-content-center">
+        <button type="button" id="restart" class="col-6, col-sm-4" onclick="restart()">
+          Restart Quiz
+        </button>
+        <button type="button" id="user-btn" class="col-6, col-sm-4" onclick="reveal('createuser')">
+          Create New User
+        </button>
+      </div>
     </div>
   </div>
 
