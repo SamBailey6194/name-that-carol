@@ -61,6 +61,11 @@ function reveal(divName) {
     document.getElementById("quiz-area").classList.remove("hidden");
   }
 
+  // Enables resetting of quiz when people create new user after clicking create new user on leaderboard
+  if (divName === "createuser") {
+    reset();
+  }
+
   // Reveals the div with the id name linked to the onclick event listener
   document.getElementById(divName).classList.remove("hidden");
 }
