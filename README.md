@@ -32,7 +32,7 @@ From the user stories you can see the wireframes that were mocked up below.
 
 ![Responsive Mockup](assets/readmeimgs/amiresponsive.png)
 
-## Features 
+## Features
 
 Below are the features for the website and at the end is listed any features that weren't able to be implemented but would be with more time.
 
@@ -40,44 +40,46 @@ Below are the features for the website and at the end is listed any features tha
 
 #### Username Creation
 
-  - When the user first accesses the page they are invited to create a username, the user can either hit enter or click submit user
-  - Once created it shows a message that they have created a username and it has been saved and the guide and quiz buttons appear
-  - If the user is revisiting the site they are welcomed back and can go to the guide or the quiz
-    
-  ![UsernameCreation](assets/readmeimgs/usernamecreation.png)
+- When the user first accesses the page they are invited to create a username, the user can either hit enter or click submit user
+- Once created it shows a message that they have created a username and it has been saved and the guide and quiz buttons appear
+- If the user is revisiting the site they are welcomed back and can go to the guide or the quiz
 
-  ![UsernameCreated](assets/readmeimgs/usernamecreatedmessage.png)
+![UsernameCreation](assets/readmeimgs/usernamecreation.png)
 
-  ![UserReturns](assets/readmeimgs/userreturns.png)
+![UsernameCreated](assets/readmeimgs/usernamecreatedmessage.png)
+
+![UserReturns](assets/readmeimgs/userreturns.png)
 
 #### Guide
 
-  - Here the user can read how to do the quiz
-  - They can then click go to quiz when they are ready
-    - If they accessed the guide from the username creation when they click the go to quiz button it starts them from question 1
-    - If they accessed the guide from the quiz area when they click go to quiz button they join the quiz from where they left off
-    
-  ![Guide](assets/readmeimgs/guidetoquiz.png)
+- Here the user can read how to do the quiz
+- They can then click go to quiz when they are ready
+  - If they accessed the guide from the username creation when they click the go to quiz button it starts them from question 1
+  - If they accessed the guide from the quiz area when they click go to quiz button they join the quiz from where they left off
+
+![Guide](assets/readmeimgs/guidetoquiz.png)
 
 #### Quiz
 
-  - Here the user can test their knowledge on christmas songs, both carols and popular songs
-  - They can click the answer they think it is either by clicking the radio buttons or the name of the song
-  - Once they are happy with their choice they can click submit answer and a alert box pops up and tells them if they got it correct or wrong, if wrong it tells them the correct answer
-  - If they click submit without selecting an answer an alert box appears telling them to select an answer
-  - The scoreboard then updates either the correct or wrong score
-  - The question order is randomised
-  - For each question the order of the options are randomised as well
-  - The randomisation enables for users to redo the quiz and have to read through the questions and options carefully rather than remembering where to click
-    
-  ![Quiz](assets/readmeimgs/quizsection.png)
+- Here the user can test their knowledge on christmas songs, both carols and popular songs
+- They can click the answer they think it is either by clicking the radio buttons or the name of the song
+- Once they are happy with their choice they can click submit answer and a alert box pops up and tells them if they got it correct or wrong, if wrong it tells them the correct answer
+- If they click submit without selecting an answer an alert box appears telling them to select an answer
+- The scoreboard then updates either the correct or wrong score
+- The question order is randomised
+- For each question the order of the options are randomised as well
+- The randomisation enables for users to redo the quiz and have to read through the questions and options carefully rather than remembering where to click
 
-#### Quiz Finished
+![Quiz](assets/readmeimgs/quizsection.png)
 
-  - Here the user can see their score in terms of how many they got correct and how many wrong
-  - There is also a button that allows them to restart the quiz if they so wish
-    
-  ![EndofQuiz](assets/readmeimgs/quizfinished.png)
+#### Leaderboard
+
+- Here the user can see their score in terms of how many they got correct and how many wrong
+- They also can compare their score to others who have used the quiz on their browser on that device
+- There is also a button that allows them to restart the quiz if they so wish
+- There is also a button that allows them to go back to user creation in case they want to enter a new username or a friend wants to give the quiz a go on their device
+
+![Leaderboard](assets/readmeimgs/quizfinished.png)
 
 ### Features Left to Implement
 
@@ -86,13 +88,14 @@ Below are the features for the website and at the end is listed any features tha
   - Compare to various leaderboards
   - Add friends
   - Access future quizzes we may implement
-- Add a leaderboard that is stored on a database and allow the below as leaderboards they can look at:
+- Store the high scores in the database and generate leaderboards that are:
   - Friends
   - Local
   - National
   - Global
+- Have a search function on the leaderboard to allow a user to find themselves easily
 
-## Testing 
+## Testing
 
 The website has been tested; including internal (buttons and navbar) & external links, responsive design, and forms; on Opera GX, Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari.
 
@@ -104,7 +107,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 - Quiz wasn't revealing itself after showing user their final score using Go to Quiz button in scoreboard section, created an onclick function of restart that accesses reset and reveal functions in JS
 - Answer was undefined after user submitted answer due to answer variable wasn't in the selectAnswer function
 - Leaderboard was not showing due to incorrect use of JSON.parse and JSON.string, edited how this was used in the JS file so that it worked
-- Leaderboard had names coming back as undefined because I was using the wrong name for list item, I was using score.username therefore this was fixed by changing score.username to the correct name of score.name 
+- Leaderboard had names coming back as undefined because I was using the wrong name for list item, I was using score.username therefore this was fixed by changing score.username to the correct name of score.name
 
 ### Unfixed Bugs
 
@@ -112,27 +115,27 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 ### Links and Actions
 
-| Location | Link / Button | Expected Action | Pass / Fail |
-| --- | --- | --- | --- |
-| Username Creation | Username not entered | Tell user to fill in the field | Pass |
-| Username Creation | Username Entered and Submit Clicked | Reveal message that tells user, username was successfully created and guide and quiz buttons | Pass |
-| Username Creation | Username Entered and user hit enter | Reveal message that tells user, username was successfully created and guide and quiz buttons | Pass |
-| Username Creation | If username is stored locally already | Reveal welcome back message and guide and quiz button | Pass |
-| Username Creation | Click Show Guide | Hide username creation and reveal guide | Pass |
-| Username Creation | Click Go to Quiz | Hide username creation and reveal quiz | Pass |
-| Guide Div accessed from Username Creation | Click Go to Quiz | Hide guide and reveal quiz with question 1 at top and question with options button below | Pass |
-| Guide Div accessed from Quiz div | Click Go to Quiz | Hide guide and reveal quiz with the last question the answer was on and the options button below | Pass |
-| Quiz Div | Click Show Guide | Reveal guide | Pass |
-| Quiz Div | Click Correct Answer | Submit selected answer and if answer is correct a message below appears congratulating the user and correct score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled | Pass |
-| Quiz Div | Click Wrong Answer | Submit selected answer and if answer is wrong a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled  | Pass |
-| Quiz Div | When final question has been answered | Hide question area and only show the scoreboard and leaderboard with a button Restart Quiz appearing | Pass |
-| Leaderboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
-| Leaderboard | When create new user is clicked | Reveal create user area and hide all other areas | Pass |
+| Location                                  | Link / Button                         | Expected Action                                                                                                                                                                                                                     | Pass / Fail |
+| ----------------------------------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Username Creation                         | Username not entered                  | Tell user to fill in the field                                                                                                                                                                                                      | Pass        |
+| Username Creation                         | Username Entered and Submit Clicked   | Reveal message that tells user, username was successfully created and guide and quiz buttons                                                                                                                                        | Pass        |
+| Username Creation                         | Username Entered and user hit enter   | Reveal message that tells user, username was successfully created and guide and quiz buttons                                                                                                                                        | Pass        |
+| Username Creation                         | If username is stored locally already | Reveal welcome back message and guide and quiz button                                                                                                                                                                               | Pass        |
+| Username Creation                         | Click Show Guide                      | Hide username creation and reveal guide                                                                                                                                                                                             | Pass        |
+| Username Creation                         | Click Go to Quiz                      | Hide username creation and reveal quiz                                                                                                                                                                                              | Pass        |
+| Guide Div accessed from Username Creation | Click Go to Quiz                      | Hide guide and reveal quiz with question 1 at top and question with options button below                                                                                                                                            | Pass        |
+| Guide Div accessed from Quiz div          | Click Go to Quiz                      | Hide guide and reveal quiz with the last question the answer was on and the options button below                                                                                                                                    | Pass        |
+| Quiz Div                                  | Click Show Guide                      | Reveal guide                                                                                                                                                                                                                        | Pass        |
+| Quiz Div                                  | Click Correct Answer                  | Submit selected answer and if answer is correct a message below appears congratulating the user and correct score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled                  | Pass        |
+| Quiz Div                                  | Click Wrong Answer                    | Submit selected answer and if answer is wrong a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled | Pass        |
+| Quiz Div                                  | When final question has been answered | Hide question area and only show the scoreboard and leaderboard with a button Restart Quiz appearing                                                                                                                                | Pass        |
+| Leaderboard                               | When restart quiz is clicked          | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong                                                                                                            | Pass        |
+| Leaderboard                               | When create new user is clicked       | Reveal create user area and hide all other areas                                                                                                                                                                                    | Pass        |
 
-
-### Validator Testing 
+### Validator Testing
 
 - Lighthouse Score
+
   - Below you can see my lighthouse scores tested on Chrome Incognito Mode
 
   - Homepage
@@ -140,20 +143,22 @@ The website has been tested; including internal (buttons and navbar) & external 
   ![Lighthouse - Homepage](assets/readmeimgs/lighthousescore.png)
 
 - HTML
+
   - No errors were returned when passing through the official W3C Validator, see images below for each page.
 
     - Homepage
-      
+
     ![W3C validator](assets/readmeimgs/htmlvalidator.png)
-    
 
 - CSS
+
   - Put CSS through Autoprefixer to ensure it works on all browsers
   - No errors were found when passing through the official Jigsaw validator, see links below.
-  
-   ![Jigsaw validator](assets/readmeimgs/cssvalidator.png)
+
+  ![Jigsaw validator](assets/readmeimgs/cssvalidator.png)
 
 - JavaScript
+
   - I have set the quiz data to one file and the logic to another file
   - Warnings produced were to do with browser compatibility
   - The two unused functions mentioned are used via onclick in HTML
@@ -164,8 +169,8 @@ The website has been tested; including internal (buttons and navbar) & external 
 
 This section desribes how I deployed my website
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the "Settings" tab 
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+  - In the GitHub repository, navigate to the "Settings" tab
   - Under "Code and automation" selected "Pages"
   - Ensure "Deploy from branch" is selected
   - In the "Branch" section "main" was selected as the branch then "/root" was selected
@@ -178,7 +183,7 @@ The live link can be found [here](https://sambailey6194.github.io/name-that-caro
 This section describes how other software developers can clone the code to edit it elsewhere
 
 - To clone the code so you can edit it yourself please follow the below:
-PLEASE NOTE THIS IS FOR WINDOWS COMMAND LINE
+  PLEASE NOTE THIS IS FOR WINDOWS COMMAND LINE
   - In the GitHub repository click the dropdown for '<> code'
   - Ensure you are on 'local' and have 'https' selected, then copy the URL by clicking the symbol next to the URL box
   - Once copied in the search bar on your taskbar type in 'cmd' and open 'Command Prompt' or 'Comman Line'
@@ -190,8 +195,7 @@ PLEASE NOTE THIS IS FOR WINDOWS COMMAND LINE
 
 If you aren't on windows please google how to get a GitHub repository stored locally on your OS
 
- 
-## Credits 
+## Credits
 
 Below are my credits for where I got inspiration for some of the code, where the content came from and where media is from.
 
@@ -205,7 +209,7 @@ Below are my credits for where I got inspiration for some of the code, where the
 - Got guidance in how to use fisher-yates algorithim from this video [here](https://www.youtube.com/watch?v=FGAUekwri1Q)
 - Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68) and these two videos; [Saving Scores](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=8), [Showing Scores](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=9)
 
-### Content 
+### Content
 
 - All icons are from font awesome
 - All fonts are from Google Fonts
