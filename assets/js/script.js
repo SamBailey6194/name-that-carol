@@ -198,17 +198,15 @@ function updateScoreDisplay() {
  * Shows result of overall quiz when they finish
  */
 function showResult() {
-  document.getElementById("quiz-area").classList.add("hidden");
-  document.getElementById("lboard").classList.remove("hidden");
-  localStorage.setItem("score", answersCorrect);
-  saveHighScore();
-  showHighScores();
+  saveScores();
+  showLeaderboard();
 }
 
 /**
  * Saving highscore
  */
-function saveHighScore() {
+function saveScores() {
+  localStorage.setItem("score", answersCorrect);
   const username = localStorage.getItem("username");
   const score = localStorage.getItem("score");
   const newScore = { 
@@ -232,7 +230,9 @@ function saveHighScore() {
 /**
  * Reveal leaderboard
  */
-function showHighScores() {
+function showLeaderboard() {
+  document.getElementById("quiz-area").classList.add("hidden");
+  document.getElementById("lboard").classList.remove("hidden");
   // Adding the scores and usernames to the leaderboard
   document.getElementById("leaderbaord").innerHTML = leaderboard
     .map((score) => `<li>${score.name} = ${score.score}</li>`)
