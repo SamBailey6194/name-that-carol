@@ -104,7 +104,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 - Quiz wasn't revealing itself after showing user their final score using Go to Quiz button in scoreboard section, created an onclick function of restart that accesses reset and reveal functions in JS
 - Answer was undefined after user submitted answer due to answer variable wasn't in the selectAnswer function
 - Leaderboard was not showing due to incorrect use of JSON.parse and JSON.string, edited how this was used in the JS file so that it worked
-- Leaderboard had names coming back as undefined because . . . and was fixed by doing . . . 
+- Leaderboard had names coming back as undefined because I was using the wrong name for list item, I was using score.username therefore this was fixed by changing score.username to the correct name of score.name 
 
 ### Unfixed Bugs
 
