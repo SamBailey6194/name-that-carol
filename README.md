@@ -103,9 +103,8 @@ The website has been tested; including internal (buttons and navbar) & external 
 - Show Guide and Go to Quiz buttons on username page were needing to be double clicked due to onclick in HTML and addEventListeners in the JS file, tidied up the function reveal() which is onclick for the buttons in HTML file
 - Quiz wasn't revealing itself after showing user their final score using Go to Quiz button in scoreboard section, created an onclick function of restart that accesses reset and reveal functions in JS
 - Answer was undefined after user submitted answer due to answer variable wasn't in the selectAnswer function
-- Options when clicked were submitting the answer rather than submit answer button submitting the answer due to the element being a button, therefore it was changed to a radio list and label
-- Clicking the name of the song wasn't selecting it as the answer due to incorrect attributes assigned to the label
-- Submit answer was returning an error and increase the wrong score when it was clicked without an answer being selected. Added an if statement and return to exit the function to stop the score from updating and tell the user to select an answer
+- Leaderboard was not showing due to incorrect use of JSON.parse and JSON.string, edited how this was used in the JS file so that it worked
+- Leaderboard had names coming back as undefined because . . . and was fixed by doing . . . 
 
 ### Unfixed Bugs
 
@@ -128,6 +127,7 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Quiz Div | Click Wrong Answer | Submit selected answer and if answer is wrong a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled  | Pass |
 | Quiz Div | When final question has been answered | Hide question area and only show the scoreboard and leaderboard with a button Restart Quiz appearing | Pass |
 | Leaderboard | When restart quiz is clicked | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong | Pass |
+| Leaderboard | When create new user is clicked | Reveal create user area and hide all other areas | Pass |
 
 
 ### Validator Testing 
@@ -203,7 +203,7 @@ Below are my credits for where I got inspiration for some of the code, where the
 - Some of the other JS coding concepts has been used from Love Maths as well
 - The username creation code has been inspired by a geekforgeeks article found [here](https://www.geeksforgeeks.org/how-to-create-a-textfield-to-enter-a-username-and-save-it-on-a-website/)
 - Got guidance in how to use fisher-yates algorithim from this video [here](https://www.youtube.com/watch?v=FGAUekwri1Q)
-- Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68)
+- Leaderboard code in JS file was influenced by this [article](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68) and these two videos; [Saving Scores](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=8), [Showing Scores](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF&index=9)
 
 ### Content 
 
