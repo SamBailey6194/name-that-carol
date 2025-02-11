@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * Reveal the div the user asks for when clicking relevant button
  */
 function reveal(divName) {
+  // All the divs listed by their ids
   document.getElementById("createuser").classList.add("hidden");
   document.getElementById("guide").classList.add("hidden");
   document.getElementById("quiz").classList.add("hidden");
@@ -60,6 +61,7 @@ function reveal(divName) {
     document.getElementById("quiz-area").classList.remove("hidden");
   }
 
+  // Reveals the div with the id name linked to the onclick event listener
   document.getElementById(divName).classList.remove("hidden");
 }
 
@@ -100,13 +102,15 @@ function reset() {
 function moveToNextQuestion() {
   currentQuestionIndex++;
 
-  // Sets quiz length to be a m aximum of 10 questions
+  // Sets quiz length to be a maximum of 10 questions
   if (
     currentQuestionIndex < quizData.length &&
     currentQuestionIndex < maxQuestions
   ) {
     showCurrentQuestion();
+    // Hides the message about whether user got answer correct or not
     document.getElementById("next").classList.add("hidden");
+    // Hides the next question button so user doesn't accidentally click it
     document.getElementById("reveal").classList.add("hidden");
   } else {
     showResult();
@@ -126,7 +130,7 @@ function showCurrentQuestion() {
   const currentQuestion = quizData[currentQuestionIndex];
   document.getElementById("question").innerText = currentQuestion.question;
 
-  // Reveal random options
+  // Reveal random options as buttons
   shuffle(currentQuestion.options);
   const optionsContainerElement = document.getElementById("options");
   optionsContainerElement.innerHTML = "";
@@ -166,9 +170,11 @@ function selectAnswer(e) {
     answersWrong++;
   }
 
+  // Reveals whether they got it right and a button to move to next question when ready
   document.getElementById("reveal").classList.remove("hidden");
   document.getElementById("next").classList.remove("hidden");
 
+  // Updates the score display
   updateScoreDisplay();
 
   // Stop user from submitting answer again
@@ -187,7 +193,7 @@ function stopAnswers() {
 }
 
 /**
- * Redisplay the score
+ * Updates the score area
  */
 function updateScoreDisplay() {
   document.getElementById("correct").innerText = answersCorrect;
@@ -195,7 +201,7 @@ function updateScoreDisplay() {
 }
 
 /**
- * Shows result of overall quiz when they finish
+ * Shows result of overall quiz and leaderboard
  */
 function showResult() {
   saveScores();
@@ -206,9 +212,14 @@ function showResult() {
  * Saving highscore
  */
 function saveScores() {
+  // Sets the score in local storage to be the answers they got correct
   localStorage.setItem("score", answersCorrect);
+
+  // Fetches the username and score in local storage
   const username = localStorage.getItem("username");
   const score = localStorage.getItem("score");
+  
+  // Variable helping with generating the array for the leaderboard
   const newScore = { 
     name: username, 
     score: score 
@@ -231,9 +242,11 @@ function saveScores() {
  * Reveal leaderboard
  */
 function showLeaderboard() {
+  // Hides the questions and reveals the leaderboard
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
-  // Adding the scores and usernames to the leaderboard
+
+  // Displays the leaderboard from local stroage in the ol id=leaderboard in HTML file 
   document.getElementById("leaderbaord").innerHTML = leaderboard
     .map((score) => `<li>${score.name} = ${score.score}</li>`)
     .join("");
