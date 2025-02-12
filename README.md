@@ -42,7 +42,7 @@ Below are the features for the website and at the end is listed any features tha
 
 - When the user first accesses the page they are invited to create a username, the user can either hit enter or click submit user
 - Once created it shows a message that they have created a username and it has been saved and the guide and quiz buttons appear
-- If the user is revisiting the site they are welcomed back and can go to the guide or the quiz
+- If the user is revisiting the site they are welcomed back, their username appears in the username input field and they can go to the guide or the quiz
 
 ![UsernameCreation](assets/readmeimgs/usernamecreation.png)
 
@@ -62,9 +62,10 @@ Below are the features for the website and at the end is listed any features tha
 #### Quiz
 
 - Here the user can test their knowledge on christmas songs, both carols and popular songs
-- They can click the answer they think it is either by clicking the radio buttons or the name of the song
-- Once they are happy with their choice they can click submit answer and a alert box pops up and tells them if they got it correct or wrong, if wrong it tells them the correct answer
-- If they click submit without selecting an answer an alert box appears telling them to select an answer
+- They can click the answer they think it is by clicking the name of the song
+- After they clicked the song a message appears informing them if they got it correct or wrong
+- The correct answer goes green, if the user got it wrong their answer goes red
+- A next question button appears so the user can continue with the quiz when they are ready
 - The scoreboard then updates either the correct or wrong score
 - The question order is randomised
 - For each question the order of the options are randomised as well
@@ -112,6 +113,8 @@ The website has been tested; including internal (buttons and navbar) & external 
 - Answer was undefined after user submitted answer due to answer variable wasn't in the selectAnswer function
 - Leaderboard was not showing due to incorrect use of JSON.parse and JSON.string, edited how this was used in the JS file so that it worked
 - Leaderboard had names coming back as undefined because I was using the wrong name for list item, I was using score.username therefore this was fixed by changing score.username to the correct name of score.name
+- Buttons were changing background colour after answer was submitted as I was trying to get the data and not an element when using the correctAnswer variable to try and change the style, therefore used userAnswer variable which is an element and created a class called actualAnswer using an if statement for the correct answer in the forEach function for the options
+- Using document.getElementsByClassName.style.backgroundColour wasn't working to style the correct answer if the user got it wrong, therefore changed it to querySelector instead to get it to work
 
 ### Unfixed Bugs
 
@@ -124,14 +127,14 @@ The website has been tested; including internal (buttons and navbar) & external 
 | Username Creation                         | Username not entered                  | Tell user to fill in the field                                                                                                                                                                                                      | Pass        |
 | Username Creation                         | Username Entered and Submit Clicked   | Reveal message that tells user, username was successfully created and guide and quiz buttons                                                                                                                                        | Pass        |
 | Username Creation                         | Username Entered and user hit enter   | Reveal message that tells user, username was successfully created and guide and quiz buttons                                                                                                                                        | Pass        |
-| Username Creation                         | If username is stored locally already | Reveal welcome back message and guide and quiz button                                                                                                                                                                               | Pass        |
+| Username Creation                         | If username is stored locally already | Username is shown in input field for username and a welcome back message and guide and quiz buttons are revealed as well                                                                                                                                                                             | Pass        |
 | Username Creation                         | Click Show Guide                      | Hide username creation and reveal guide                                                                                                                                                                                             | Pass        |
 | Username Creation                         | Click Go to Quiz                      | Hide username creation and reveal quiz                                                                                                                                                                                              | Pass        |
 | Guide Div accessed from Username Creation | Click Go to Quiz                      | Hide guide and reveal quiz with question 1 at top and question with options button below                                                                                                                                            | Pass        |
 | Guide Div accessed from Quiz div          | Click Go to Quiz                      | Hide guide and reveal quiz with the last question the answer was on and the options button below                                                                                                                                    | Pass        |
 | Quiz Div                                  | Click Show Guide                      | Reveal guide                                                                                                                                                                                                                        | Pass        |
-| Quiz Div                                  | Click Correct Answer                  | Submit selected answer and if answer is correct a message below appears congratulating the user and correct score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled                  | Pass        |
-| Quiz Div                                  | Click Wrong Answer                    | Submit selected answer and if answer is wrong a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled | Pass        |
+| Quiz Div                                  | Click Correct Answer                  | Submit selected answer and if answer is correct the answer goes green and a message below appears congratulating the user and correct score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled                  | Pass        |
+| Quiz Div                                  | Click Wrong Answer                    | Submit selected answer and if answer is wrong the user answer goes red and the correct anwer goes green and a message below appears telling the user what the correct answer was and wrong score goes up by 1 and a button saying Next Question appears while all the answer buttons get disabled | Pass        |
 | Quiz Div                                  | When final question has been answered | Hide question area and only show the scoreboard and leaderboard with a button Restart Quiz appearing                                                                                                                                | Pass        |
 | Leaderboard                               | When restart quiz is clicked          | Reveal question area again above scoreboard with question 1 and the options, reset scoreboard to 0 for correct and wrong                                                                                                            | Pass        |
 | Leaderboard                               | When create new user is clicked       | Reveal create user area and hide all other areas                                                                                                                                                                                    | Pass        |
@@ -164,9 +167,8 @@ The website has been tested; including internal (buttons and navbar) & external 
 - JavaScript
 
   - I have set the quiz data to one file and the logic to another file
-  - Warnings produced were to do with browser compatibility
-  - quizData is defined in the quizdata.js file
-  - The two unused functions mentioned are used via onclick in HTML
+  - quizData is defined in the quizdata.js file not the script.js file therefore is listed as unused in first screenshot and undefined on the second screenshot
+  - The two unused functions in the second screenshot mentioned are used via onclick in HTML
 
   ![JSHint validator - Quiz Data](assets/readmeimgs/jsquizvalidator.png)
 
