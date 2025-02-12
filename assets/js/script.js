@@ -154,11 +154,21 @@ function showCurrentQuestion() {
     optionsContainerElement.appendChild(button);
 
     button.addEventListener("click", selectAnswer);
+
+    if (button.innerText === quizData[currentQuestionIndex].answer) {
+      button.classList.add("actualAnswer"); 
+    }
   });
 }
 
 /**
  * Checks answer user gives to the correct answer
+ * Displays message declaring if user got answer correct or not
+ * Colours the user answer and correct answer in correspondence as to if
+ * the user got the answer correct
+ * Reveals the next question button
+ * Increments the score displayed
+ * Disables the options
  */
 function selectAnswer(e) {
   const correctAnswer = quizData[currentQuestionIndex].answer;
@@ -178,6 +188,7 @@ function selectAnswer(e) {
     ).textContent = `Unlucky you got it wrong. The answer was ${correctAnswer}`;
     answersWrong++;
     userAnswer.style.backgroundColor = "red";
+    document.querySelector(".actualAnswer").style.backgroundColor = "green";
   }
 
   // Reveals whether they got it right and a button to move to next question when ready
