@@ -167,12 +167,14 @@ function selectAnswer(e) {
     document.getElementById("reveal").textContent =
       "Well done! You got it right!";
     answersCorrect++;
+    userAnswer.style.backgroundColor = "green";
   } else {
     // display a message to tell the they got it wrong and reveals correct answer
     document.getElementById(
       "reveal"
     ).textContent = `Unlucky you got it wrong. The answer was ${correctAnswer}`;
     answersWrong++;
+    userAnswer.style.backgroundColor = "red";
   }
 
   // Reveals whether they got it right and a button to move to next question when ready
