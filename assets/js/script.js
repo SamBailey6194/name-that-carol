@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Check if a username is already saved and display it
   if (savedUsername) {
+    // Gives the username box the value of the saved username in local storage to show
+    // returning users they are set up and ready to go 
+    document.getElementById("username").setAttribute("value", savedUsername);
     document.getElementById(
       "message"
     ).textContent = `Welcome back, ${savedUsername}! Give the quiz another try and beat your best score!`;
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       // Get entered username
-      const usernameInput = document.getElementById("username").value;
+      let usernameInput = document.getElementById("username").value;
 
       //Save username in localStorage
       localStorage.setItem("username", usernameInput);
@@ -225,11 +228,11 @@ function saveScores() {
   // Fetches the username and score in local storage
   const username = localStorage.getItem("username");
   const score = localStorage.getItem("score");
-  
+
   // Variable helping with generating the array for the leaderboard
-  const newScore = { 
-    name: username, 
-    score: score 
+  const newScore = {
+    name: username,
+    score: score,
   };
 
   // Adds to list of high scores
@@ -253,7 +256,7 @@ function showLeaderboard() {
   document.getElementById("quiz-area").classList.add("hidden");
   document.getElementById("lboard").classList.remove("hidden");
 
-  // Displays the leaderboard from local stroage in the ol id=leaderboard in HTML file 
+  // Displays the leaderboard from local stroage in the ol id=leaderboard in HTML file
   document.getElementById("leaderboard").innerHTML = leaderboard
     .map((score) => `<li>${score.name} = ${score.score}</li>`)
     .join("");
